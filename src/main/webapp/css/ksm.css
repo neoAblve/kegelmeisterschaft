@@ -1,0 +1,302 @@
+body {
+ font-family: Arial, Helvetica, sans-serif;
+ color: #666666;
+ font-size: 12px;
+ background-color: #ccc;
+ background-repeat:repeat;
+}
+
+h1 {
+ font-size: 20px;
+ font-family: Arial;
+ margin: 2px;
+}
+
+h2 {
+ font-size: 18px;
+ font-family: Arial;
+ margin: 2px;
+}
+
+p {
+    font-size: 12px;
+}
+
+img {
+	border: none;
+	margin-bottom: -3px;
+	margin-right: -3px;
+}
+
+th {
+	padding: 2px;
+}
+
+sup {
+	line-height: 0em;
+}
+
+.wrapper {
+ width: 952px;
+ margin: 0 auto;
+}
+
+.space {
+	height: 5px;
+}
+.left {
+	float: left;
+	margin: -6px;
+}
+.right {
+	float: right;
+	margin: -6px;
+}
+
+/* ------------------------ Start Header -----------------*/
+.header {
+ margin: 0px 0px 8px 0px;
+ background-color: #333;
+ min-height: 130px;
+}
+
+.headTop{
+	padding: 10px 5px 5px 10px;
+	float: left;
+	color: white;
+	font-size: 15px;
+	width: 379px;
+}
+
+.headTop .heading {
+	font-size: larger;
+	margin-bottom: 8px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.headTop table{
+	color: white;
+	font-size: 14px;
+	margin-left: 15px;
+}
+.headTop td{
+	text-align: center;
+}
+/* ------------------------ End Header -----------------*/
+
+/* ------------------------ Start Nav Bar -----------------*/
+.nav-bar {
+	background-color: #E8E8E8;
+	margin: 0px 0px 8px 0px;
+	border: 1px solid #AEAEAE;
+}
+
+.nav-links {
+	display: inline-block;
+	list-style: none;
+	padding-left: 18px;
+}
+
+.nav-links li {
+	float:left;
+	position: relative;
+	list-style: none;
+	margin-right: 12px;
+	background-color: #E8E8E8;
+}
+
+.nav-links li a:link {
+ background-color: #E8E8E8;
+ color: #333;
+ font-weight: bold;
+ font-size: 13px;
+ text-decoration: none;
+}
+
+.nav-links li a:visited {
+ background-color: #E8E8E8;
+ color: #333;
+ font-weight: bold;
+ font-size: 13px;
+ text-decoration: none;
+}
+
+.nav-links li a:hover {
+ background-color: #E8E8E8;
+ color: #999;
+ font-weight: bold;
+ font-size: 13px;
+ text-decoration: none;
+}
+
+.nav-links > li:hover > ul {
+    display: block;
+}
+
+.nav-links > li > ul {
+    display: none;
+    position: absolute;
+}
+
+.sub {
+	padding: 2px;
+	padding-left: 4px;
+	margin-left: -42px;
+}
+/* ------------------------ End Nav Bar -----------------*/
+
+/* ------------------------ Start outer content -----------------*/
+#outercontent {
+ background-color: #e8e8e8;
+ width: 924px;
+ padding: 13px;
+ margin-bottom: 8px;
+ border: 1px solid #AEAEAE;
+}
+
+#outercontent td {
+	vertical-align: top;
+}
+/* ------------------------ End outer content -----------------*/
+
+/* ------------------------ Start Columns -----------------*/
+#centercolumn { 
+ background-color: #333333;
+ margin: 0px 0px 0px 0px;
+ padding: 7px;
+ color: #E9E9E9;
+}
+
+#breaking { 
+ background-color: #333333;
+ margin: 0 3px 5px;
+ padding: 5px;
+ color: #E9E9E9;
+ font-size: 14px;
+}
+
+.withRightColumn {
+	width: 640px;
+}
+
+.wide {
+	width: 905px;
+}
+
+.rightcolumn {
+ margin: 0px 0px 13px 8px;
+ padding: 7px;
+ width: 238px;
+ font-size: 13px;
+ border: 1px solid #AEAEAE;
+ background-color: #ccc;
+}
+
+.rightcolumn ul {
+	margin-bottom: 3px;
+	margin-top: 1px;
+	padding-left: 20px;
+}
+/* ------------------------ End Columns -----------------*/
+
+/* ------------------------ Start Footer -----------------*/
+#footer {
+ border: 1px solid #AEAEAE;
+ padding: 15px;
+ margin-bottom: 8px;
+ background-color: #e8e8e8;
+ text-align: center;
+}
+/* ------------------------ End Footer -----------------*/
+
+.float {
+ float: left;
+ padding: 0px 10px 0px 0px;
+}
+
+/* Links */
+a:link {
+ color: #333333;
+ text-decoration: none;
+}
+a:visited {
+ color: #333333;
+ text-decoration: none;
+}
+a:hover {
+ color: #333333;
+ background-color: #fff;
+ text-decoration: none;
+}
+
+/* Tabellen */
+.data {
+	width: 100%;
+	color: #333333;
+	font-size: small;
+	background-color: #E8E8E8;
+	border-collapse:collapse;
+	border: 1px solid white;
+	text-align: left;
+}
+
+.data td {
+	padding: 2px;
+}
+
+.dynData {
+	color: #333333;
+	font-size: small;
+	background-color: #E8E8E8;
+	border-collapse:collapse;
+	border: 1px solid white;
+	text-align: left;
+}
+
+.dynData td {
+	padding: 2px;
+	vertical-align: top;
+}
+
+.head {
+	font-weight: bold;
+	background-color: #AEAEAE;
+	padding: 2px;
+}
+
+.leftBorder {
+	border-left: solid 1px #000;
+}
+
+.total {
+	border-top:solid 1px #000; 
+	font-weight:bold; 
+	padding-top:5px; 
+	vertical-align:bottom
+}
+
+.top {
+	font-weight: bold;
+}
+
+.alt {
+	background-color: #AEAEAE;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.legend {
+	font-size: 10px;
+}
+
+.news {
+	background-color: #CCCCCC;
+    border: 1px solid #AEAEAE;
+    font-size: 13px;
+    margin: 10px 8px 13px;
+    padding: 7px;
+    color: #333333;
+}

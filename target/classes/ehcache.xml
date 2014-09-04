@@ -1,0 +1,64 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="classpath:ehcache.xsd">
+	<diskStore path="java.io.tmpdir"/>
+	<defaultCache
+		maxElementsInMemory="3000"
+		eternal="true"
+		overflowToDisk="true"
+	/>
+		
+	<cache name="kegelmeisterschaft.entities.ClubBean"
+    	maxElementsInMemory="10000"
+    	eternal="false"
+    	timeToIdleSeconds="3000"
+    	timeToLiveSeconds="6000"
+    	overflowToDisk="true"
+	/>
+	<cache name="kegelmeisterschaft.entities.ClubBean.player"
+    	maxElementsInMemory="10000"
+    	eternal="false"
+    	timeToIdleSeconds="3000"
+    	timeToLiveSeconds="6000"
+    	overflowToDisk="true"
+	/>
+	
+	<cache name="kegelmeisterschaft.entities.PlayerBean"
+    	maxElementsInMemory="10000"
+    	eternal="false"
+    	timeToIdleSeconds="3000"
+    	timeToLiveSeconds="6000"
+    	overflowToDisk="true"
+	/>
+	<cache name="kegelmeisterschaft.entities.PlayerBean.clubs"
+    	maxElementsInMemory="10000"
+    	eternal="false"
+    	timeToIdleSeconds="3000"
+    	timeToLiveSeconds="6000"
+    	overflowToDisk="true"
+	/>
+	
+	<cache name="kegelmeisterschaft.entities.EventBean"
+    	maxElementsInMemory="10000"
+    	eternal="false"
+    	timeToIdleSeconds="3000"
+    	timeToLiveSeconds="6000"
+    	overflowToDisk="true"
+	/>
+	
+	<cache name="kegelmeisterschaft.entities.ResultBean"
+    	maxElementsInMemory="10000"
+    	eternal="false"
+    	timeToIdleSeconds="3000"
+    	timeToLiveSeconds="6000"
+    	overflowToDisk="true"
+	/>
+	
+	<cache name="org.hibernate.cache.StandardQueryCache"
+		maxElementsInMemory="10000"
+        eternal="false"
+    	timeToIdleSeconds="3000"
+    	timeToLiveSeconds="6000"
+        overflowToDisk="false"
+        memoryStoreEvictionPolicy="LRU"
+    />
+</ehcache> 
