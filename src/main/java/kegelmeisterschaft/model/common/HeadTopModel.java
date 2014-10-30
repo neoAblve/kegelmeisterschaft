@@ -34,6 +34,8 @@ public class HeadTopModel {
     }
 
     public void fillWithClubs(List<ClubResultModel> results) {
+	if (results.size() < rows.length)
+	    return;
 	for (int i = 0; i < rows.length; i++) {
 	    ClubResultModel clubResult = results.get(i);
 	    rows[i] = new HeadTopRow(clubResult.getClub().getName(),
@@ -42,6 +44,8 @@ public class HeadTopModel {
     }
 
     public void fillWithPlayer(List<PlayerResultModel> results) {
+	if (results.size() < rows.length)
+	    return;
 	for (int i = 0; i < rows.length; i++) {
 	    PlayerResultModel playerResult = results.get(i);
 	    String name = playerResult.getPlayer().getFirstName() + " "
@@ -52,6 +56,8 @@ public class HeadTopModel {
     }
 
     public void fillWithChecker(List<CheckerResultModel> results) {
+	if (results.size() < rows.length)
+	    return;
 	for (int i = 0; i < rows.length; i++) {
 	    CheckerResultModel checkerResult = results.get(i);
 	    String name = checkerResult.getChecker().getFirstName() + " "
