@@ -6,9 +6,10 @@
     <jsp:body>
 		<h1>Impressum</h1>
 		<p>Angaben gemäß § 5 TMG:<br/></p>
-		<p>KC K.e.R.n<br />
+		<p>
+			KC After Nine dfmA<br />
 			Kegelclub<br />
-			Hofstraße 19<br />
+			Hangweg 20<br />
 			58802 Balve<br />
 		</p>
 		<div class="space"></div>

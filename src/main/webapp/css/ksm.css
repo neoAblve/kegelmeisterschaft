@@ -1,8 +1,8 @@
 body {
  font-family: Arial, Helvetica, sans-serif;
- color: #666666;
+ color: #FEFEFE;
  font-size: 12px;
- background-color: #ccc;
+ background-color: #03190C;
  background-repeat:repeat;
 }
 
@@ -56,14 +56,14 @@ sup {
 /* ------------------------ Start Header -----------------*/
 .header {
  margin: 0px 0px 8px 0px;
- background-color: #333;
+ background-color: #03190C;
  min-height: 130px;
 }
 
 .headTop{
 	padding: 10px 5px 5px 10px;
 	float: left;
-	color: white;
+	color: #FEFEFE;
 	font-size: 15px;
 	width: 379px;
 }
@@ -76,7 +76,7 @@ sup {
 }
 
 .headTop table{
-	color: white;
+	color: #FEFEFE;
 	font-size: 14px;
 	margin-left: 15px;
 }
@@ -87,9 +87,10 @@ sup {
 
 /* ------------------------ Start Nav Bar -----------------*/
 .nav-bar {
-	background-color: #E8E8E8;
+	background-color: #2F4537;
 	margin: 0px 0px 8px 0px;
 	border: 1px solid #AEAEAE;
+	position: relative;
 }
 
 .nav-links {
@@ -103,28 +104,28 @@ sup {
 	position: relative;
 	list-style: none;
 	margin-right: 12px;
-	background-color: #E8E8E8;
+	background-color: #2F4537;
 }
 
 .nav-links li a:link {
- background-color: #E8E8E8;
- color: #333;
+ background-color: #2F4537;
+ color: #FEFEFE;
  font-weight: bold;
  font-size: 13px;
  text-decoration: none;
 }
 
 .nav-links li a:visited {
- background-color: #E8E8E8;
- color: #333;
+ background-color: #2F4537;
+ color: #FEFEFE;
  font-weight: bold;
  font-size: 13px;
  text-decoration: none;
 }
 
 .nav-links li a:hover {
- background-color: #E8E8E8;
- color: #999;
+ background-color: #2F4537;
+ color: #999999;
  font-weight: bold;
  font-size: 13px;
  text-decoration: none;
@@ -144,11 +145,18 @@ sup {
 	padding-left: 4px;
 	margin-left: -42px;
 }
+
+#fb {
+	position: absolute;
+    right: 0px;
+    width: 167px;
+    margin-top: -30px;	
+}
 /* ------------------------ End Nav Bar -----------------*/
 
 /* ------------------------ Start outer content -----------------*/
 #outercontent {
- background-color: #e8e8e8;
+ background-color: #2F4537;
  width: 924px;
  padding: 13px;
  margin-bottom: 8px;
@@ -162,17 +170,18 @@ sup {
 
 /* ------------------------ Start Columns -----------------*/
 #centercolumn { 
- background-color: #333333;
+ background-color: #03190C;
+ border: 1px solid #AEAEAE;
  margin: 0px 0px 0px 0px;
  padding: 7px;
- color: #E9E9E9;
+ color: #FEFEFE;
 }
 
 #breaking { 
- background-color: #333333;
+ background-color: #03190C;
  margin: 0 3px 5px;
  padding: 5px;
- color: #E9E9E9;
+ color: #FEFEFE;
  font-size: 14px;
 }
 
@@ -190,7 +199,7 @@ sup {
  width: 238px;
  font-size: 13px;
  border: 1px solid #AEAEAE;
- background-color: #ccc;
+ background-color: #03190C;
 }
 
 .rightcolumn ul {
@@ -205,7 +214,7 @@ sup {
  border: 1px solid #AEAEAE;
  padding: 15px;
  margin-bottom: 8px;
- background-color: #e8e8e8;
+ background-color: #2F4537;
  text-align: center;
 }
 /* ------------------------ End Footer -----------------*/
@@ -217,27 +226,27 @@ sup {
 
 /* Links */
 a:link {
- color: #333333;
+ color: #FEFEFE;
  text-decoration: none;
 }
 a:visited {
- color: #333333;
+ color: #FEFEFE;
  text-decoration: none;
 }
 a:hover {
- color: #333333;
- background-color: #fff;
+ color: #999999;
+ /*background-color: #FEFEFE;*/
  text-decoration: none;
 }
 
 /* Tabellen */
 .data {
 	width: 100%;
-	color: #333333;
+	color: #FEFEFE;
 	font-size: small;
-	background-color: #E8E8E8;
+	background-color: #514031;
 	border-collapse:collapse;
-	border: 1px solid white;
+	/*border: 1px solid white;*/
 	text-align: left;
 }
 
@@ -246,11 +255,11 @@ a:hover {
 }
 
 .dynData {
-	color: #333333;
+	color: #FEFEFE;
 	font-size: small;
-	background-color: #E8E8E8;
+	background-color: #514031;
 	border-collapse:collapse;
-	border: 1px solid white;
+	/*border: 1px solid white;*/
 	text-align: left;
 }
 
@@ -261,19 +270,19 @@ a:hover {
 
 .head {
 	font-weight: bold;
-	background-color: #AEAEAE;
+	background-color: #2F4537;
 	padding: 2px;
 }
 
 .leftBorder {
-	border-left: solid 1px #000;
+	border-left: solid 1px #000000;
 }
 
 .total {
-	border-top:solid 1px #000; 
+	border-top:solid 1px #0000000; 
 	font-weight:bold; 
 	padding-top:5px; 
-	vertical-align:bottom
+	vertical-align: bottom;
 }
 
 .top {
@@ -281,7 +290,7 @@ a:hover {
 }
 
 .alt {
-	background-color: #AEAEAE;
+	background-color: #2F4537;
 }
 
 .bold {
@@ -293,10 +302,10 @@ a:hover {
 }
 
 .news {
-	background-color: #CCCCCC;
+	background-color: #2F4537;
     border: 1px solid #AEAEAE;
     font-size: 13px;
     margin: 10px 8px 13px;
     padding: 7px;
-    color: #333333;
+    color: #FEFEFE;
 }

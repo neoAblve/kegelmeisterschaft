@@ -8,22 +8,18 @@
 	<jsp:attribute name="rightTeaser">
 		<!-- Start Right Content -->
 	   	<div class="rightcolumn">
-	     	<h1>Ergebnisdienst</h1>
-	     	Letztes Ergebnis-Upload:<br /><b>16. März 17:00 Uhr</b><br /><br />
-	     	Endergebnisse! Herzlichen Glückwunsch allen Stadtmeistern/innen!
+	     	<h1>Update</h1>
+	     	Pünktlich zum Jahreswechsel präsentiert sich auf ksm-balve.de auch der neue Ausrichter "KC After Nine dfmA".
+	     	Wir freuen uns auf eine aufregende Stadtmeisterschaft.
 	    </div>
 	   	<div class="rightcolumn">
 	     	<h1>Kinder-/Tandemkegeln</h1>
-	     	Ergebnisse und Fotos findet ihr hier:
-	     	<ul>
-	     		<li><a href="/ksm/kinder">Kinder</a></li>
-	     		<li><a href="/ksm/tandem">Tandem</a></li>
-	     	</ul>
-	     	Die Siegerehrung findet vor dem Keglerball am 22. März um 18 Uhr statt.
+	     	Wird auch in diesem Jahr ausgetragen. Und zwar am 1. Februar und 1. März von 11:00 Uhr bis 17:00 Uhr 
+	     	im Haus Padberg auf Bahn 1+2.
 	   	</div>
 	   	<div class="rightcolumn">
 	     	<h1>Keglerball</h1>
-	     	<img alt="Teaser Keglerball 22.03.2014" src="/images/advertParty.jpg"  width="238px" height="337px" />
+	     	<img alt="Teaser Keglerball 22.03.2014" src="/images/teaserKeglerball2015.png" />
 	   	</div>
 	    <!-- 
 	   	<div class="rightcolumn">
@@ -52,33 +48,54 @@
 	   	<!-- End Right Content -->
 	</jsp:attribute>
     <jsp:body>
-    	<h2>Willkommen zur Balver Kegelstadtmeisterschaft 2014</h2>
+    	<h2>Willkommen zur 50. Balver Kegelstadtmeisterschaft 2015</h2>
     	<div style="line-height: 17px;">
-		<p>Liebe Kegelbegeisterte in Balve und Umgebung,<br /><br />
-		das Warten hat ein Ende, die Stadtmeisterschaft steht wieder vor der Tür. 
-		Wir, der KC K.e.R.n., freuen uns, Euch alle zu der Balver Kegelstadtmeisterschaft 2014 begrüßen zu dürfen.</p>
-		<p>An dieser Stelle möchten wir uns zunächst bei unseren Kegelbrüdern vom KC Reingedengelt bedanken,
-		die im letzten Jahr eine hervorragende Stadtmeisterschaft auf die Beine gestellt haben,
-		welche mit dem ein oder anderen Erfrischungsgetränk in der Garbecker Schützenhalle ihren
-		würdigen Abschluss fand.</p>
-		<p>Nachdem 2013 erstmalig auch ein Wettbewerb für die kleineren Kegler ausgerichtet wurde,
-		möchten wir dies gerne fortführen und bieten interessierten Kindern die Möglichkeit, sich mit
-		anderen in ihrem Alter zu messen.<br />
-		Weiter bieten wir dieses Jahr einen zusätzlichen Wettbewerb an, und zwar das "Tandemkegeln". Dabei müssen auf zwei Kegelbahnen, zwei Kegler als Team zusammen eine möglichst hohe Holzzahl erkegeln.<br /><br />
-		Diese beiden Wettbewerbe werden am <b>Sonntag, den 2. Februar</b> und am <b>Sonntag, den 2. März</b> von <b>10:00 Uhr bis 16:00 Uhr</b> im <b>Haus Padberg (Bahn 1+2)</b> angeboten. Für weitere Details, zum Modus, Altersklassen usw. siehe die Boxen rechts.<br />
-		Die Sieger bei den Kindern werden, wie im letzten Jahr, vor dem Keglerball geehrt. Die Siegerehrung des Tandemwettbewerbs findet im Rahmen der Siegerehrung der Stadtmeisterschaft statt.</p>
-		<p>Nun aber zur Stadtmeisterschaft 2014:<br />
-		Beginn:<span style="white-space:pre">&#9;</span><span style="white-space:pre">&#9;</span><span style="font-weight: bold; font-size: 14px;">Freitag, 17. Januar 2014</span><br />
-		Ende:<span style="white-space:pre">&#9;</span><span style="white-space:pre">&#9;</span><span style="font-weight: bold; font-size: 14px;">Sonntag, 16. März 2014</span><br />
-		Keglerball:<span style="white-space:pre">&#9;</span><span style="font-weight: bold; font-size: 14px;">Samstag, 22. März 2014</span><br />
-		Startgebühr:<span style="white-space:pre">&#9;</span>30 € pro Kegelclub<br />
-		Modus:<span style="white-space:pre">&#9;</span><span style="white-space:pre">&#9;</span>vier Durchgänge mit jeweils 20 Wurf<br />
-		<span style="white-space:pre">&#9;</span><span style="white-space:pre">&#9;</span><span style="white-space:pre">&#9;</span>5 Wurf in die Vollen, 5 Wurf Abräumen,<br />
-		<span style="white-space:pre">&#9;</span><span style="white-space:pre">&#9;</span><span style="white-space:pre">&#9;</span>5 Wurf in die Vollen, 5 Wurf Abräumen<p />
-		<p>Solltet Ihr eine Frage oder eine Anmerkung haben oder sich ein Fehler eingeschlichen haben, könnt Ihr uns über das <a style="color: #E9E9E9" href="/ksm/kontakt">Kontakt-Formular</a> anschreiben. Wir antworten auf nützliche Tipps und Hinweise gerne und möglichst zeitnah.</p>
-		<p>Wir freuen uns nun auf eine spannende Stadtmeisterschaft.</p>
-		<p>Mit sportlichem Gruß<br />
-		Euer KC K.e.R.n.</p>
+		<p>Liebe Freunde des Kegelsports,</p>
+		<p>
+			bald ist es endlich wieder so weit, die Stadtmeisterschaft steht wieder vor der Tür. Die Meisterschaft der Stadt Balve, 
+			bzw. des alten Amtes Balve, steht in diesem Jahr ganz im Zeichen ihrer 50. Austragung. 
+			Wir, der KC After Nine, freuen uns deshalb schon sehr dieses besondere Event austragen zu dürfen.
+		</p>
+		<p>
+			Zunächst einmal gilt unser Dank unseren Vorgängern vom KC K.e.R.n, die wirklich eine sehr schöne 
+			Stadtmeisterschaft und einen, wie fast schon traditionell, hervorragenden Keglerball 2014 organisiert haben.
+		</p>
+		<p>
+			Es ist uns eine Freude in diesem Jahr auch wieder Kegelclubs des alten Amtes Balve 
+			begrüßen zu dürfen, um auch mal wieder das ein oder andere kühle Blonde in Affeln trinken zu können. 
+			Natürlich kommen auch in diesem Jahr die kleinsten Kegler in Balve nicht zu kurz. Wir 
+			werden wieder einen Wettbewerb für interessierte Kinder ermöglichen, um auch sie früh an die 
+			Freude des Kegelsports heranzuführen. Des Weiteren werden wir noch einen weiteren Wettbewerb 
+			für alle anderen interessierten Kegler anbieten. Nähere Infos dazu werden noch bekannt gegeben.
+		</p>
+		<p>
+			Diese beiden Wettbewerbe werden an den Sonntagen am 1. Februar und am 1. März von
+			11:00 Uhr bis 17:00 Uhr im Haus Padberg (Bahn 1+2) angeboten. 
+			Die Sieger der Kinder werden, wie im letzten Jahr, vor dem Keglerball geehrt.
+		</p>
+		<p>
+			Aber kommen wir erstmal zur Stadtmeisterschaft 2015<br />
+			Beginn:<span style="white-space:pre">&#9;</span><span style="white-space:pre">&#9;</span><span style="font-weight: bold; font-size: 14px;">Freitag, 23. Januar 2015</span><br />
+			Ende:<span style="white-space:pre">&#9;</span><span style="white-space:pre">&#9;</span><span style="font-weight: bold; font-size: 14px;">Sonntag, 22. März 2015</span><br />
+			Keglerball:<span style="white-space:pre">&#9;</span><span style="font-weight: bold; font-size: 14px;">Samstag, 11. April 2015 in Langenholthausen</span><br />
+			Startgebühr:<span style="white-space:pre">&#9;</span>30 € pro Kegelclub<br />
+			Modus:<span style="white-space:pre">&#9;</span><span style="white-space:pre">&#9;</span>vier Durchgänge mit jeweils 20 Wurf<br />
+			<span style="white-space:pre">&#9;</span><span style="white-space:pre">&#9;</span><span style="white-space:pre">&#9;</span>5 Wurf in die Vollen, 5 Wurf Abräumen,<br />
+			<span style="white-space:pre">&#9;</span><span style="white-space:pre">&#9;</span><span style="white-space:pre">&#9;</span>5 Wurf in die Vollen, 5 Wurf Abräumen
+		</p>
+		<p>
+			Sollten noch irgendwelche Fragen oder Anmerkungen auftreten, könnt ihr uns gerne über das 
+			<a style="color: #E9E9E9" href="/ksm/kontakt">Kontakt-Formular</a> anschreiben oder auch gerne bei Facebook auf unserer Seite
+			(Kegelstadtmeisterschaft Balve 2015) vorbeischauen. Hier findet ihr auch immer Neuigkeiten zu der Stadtmeisterschaft.
+		</p>
+		<p>
+			So, nun aber freuen wir uns drauf, dass es endlich los geht und der Kegelsport wieder Balve regiert.
+			Wir hoffen, dass es eine spannende 50. Kegelstadtmeisterschaften wird.
+		</p>
+		<p>
+			Gut Holz<br />
+			Euer KC After Nine
+		</p>
 		</div>
     </jsp:body>
 </t:layout>

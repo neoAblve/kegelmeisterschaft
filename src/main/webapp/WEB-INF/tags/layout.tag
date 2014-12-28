@@ -7,20 +7,31 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-	<title>Balver Kegelstadtmeisterschaft 2014</title>
+	<title>Balver Kegelstadtmeisterschaft 2015</title>
 	<link rel="stylesheet" type="text/css" href="/css/ksm.css" />
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-	<link rel="icon" href="/images/logo.jpeg" type="image/x-icon">
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
 	<!-- Start Wrapper -->
 	<div class="wrapper">
 		<!-- Start Header -->
 		<div class="header">
 			<div style="float:left;">
-				<img src="/images/logo.jpeg" alt="Logo" width="110" height="130" />
-				<img src="/images/title.jpg" alt="Title" width="450" height="130" />
+				<img src="/images/logo2015.png" alt="Logo" height="130" />
+				<img src="/images/headTeaser2015.jpg" alt="Title" height="130" />
 			</div>
+			<!-- 
 			<div class="headTop">
 				<div class="heading">Top 3: ${headTop.title}</div>
 				<table>
@@ -40,6 +51,7 @@
 					</c:forEach>
 				</table>
 			</div>
+			 -->
 		</div>
   		<!-- End Header -->
   		
@@ -73,6 +85,10 @@
 		    	<li><a href="/ksm/gaestebuch">Gästebuch</a></li>
 		    	<li><a href="/ksm/kontakt">Kontakt</a></li>
 		  	</ul>
+		  	<div id="fb">
+			  	<div class="fb-like" data-href="https://www.facebook.com/pages/Kegelstadtmeisterschaft-Balve-2015/1517670148452479?ref=ts&fref=ts" 
+			  		data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+		  	</div>
 		</div>
 		<!-- End Navigation Bar -->
 		
@@ -98,7 +114,7 @@
 	  	<div id="footer">
 	  		<div class="left"> 
 		  		<a href="/ksm/impressum">&#60;Impressum&#62;</a>  
-		  		<a href="/downloads/KSM_Satzung.pdf" target="_blank">&#60;Satzung der KSM 2014&#62;</a>
+		  		<a href="/downloads/KSM_Satzung.pdf" target="_blank">&#60;Satzung der KSM 2015&#62;</a>
 		  		<a href="/downloads/Wertungsbogen_KSM14.pdf" target="_blank">&#60;Wertungsbogen&#62;</a>
 	  		</div>
 	  		<div class="right">

@@ -267,5 +267,36 @@ Bericht: <a href="http://www.derwesten.de/staedte/balve/kegel-stadtmeisterschaft
 	     		<li><a href="/ksm/club/12">Die Höhlenbären</a>: 1. + 2. Durchgang</li>
 	     	</ul>
 	    </div>
+    	<div class="news">
+	     	<h1>Begrüßung KC K.e.R.n.</h1>
+	     	<h2>Willkommen zur Balver Kegelstadtmeisterschaft 2014</h2>
+	    	<div style="line-height: 17px;">
+			<p>Liebe Kegelbegeisterte in Balve und Umgebung,<br /><br />
+			das Warten hat ein Ende, die Stadtmeisterschaft steht wieder vor der Tür. 
+			Wir, der KC K.e.R.n., freuen uns, Euch alle zu der Balver Kegelstadtmeisterschaft 2014 begrüßen zu dürfen.</p>
+			<p>An dieser Stelle möchten wir uns zunächst bei unseren Kegelbrüdern vom KC Reingedengelt bedanken,
+			die im letzten Jahr eine hervorragende Stadtmeisterschaft auf die Beine gestellt haben,
+			welche mit dem ein oder anderen Erfrischungsgetränk in der Garbecker Schützenhalle ihren
+			würdigen Abschluss fand.</p>
+			<p>Nachdem 2013 erstmalig auch ein Wettbewerb für die kleineren Kegler ausgerichtet wurde,
+			möchten wir dies gerne fortführen und bieten interessierten Kindern die Möglichkeit, sich mit
+			anderen in ihrem Alter zu messen.<br />
+			Weiter bieten wir dieses Jahr einen zusätzlichen Wettbewerb an, und zwar das "Tandemkegeln". Dabei müssen auf zwei Kegelbahnen, zwei Kegler als Team zusammen eine möglichst hohe Holzzahl erkegeln.<br /><br />
+			Diese beiden Wettbewerbe werden am <b>Sonntag, den 2. Februar</b> und am <b>Sonntag, den 2. März</b> von <b>10:00 Uhr bis 16:00 Uhr</b> im <b>Haus Padberg (Bahn 1+2)</b> angeboten. Für weitere Details, zum Modus, Altersklassen usw. siehe die Boxen rechts.<br />
+			Die Sieger bei den Kindern werden, wie im letzten Jahr, vor dem Keglerball geehrt. Die Siegerehrung des Tandemwettbewerbs findet im Rahmen der Siegerehrung der Stadtmeisterschaft statt.</p>
+			<p>Nun aber zur Stadtmeisterschaft 2014:<br />
+			Beginn:<span style="white-space:pre">&#9;</span><span style="white-space:pre">&#9;</span><span style="font-weight: bold; font-size: 14px;">Freitag, 17. Januar 2014</span><br />
+			Ende:<span style="white-space:pre">&#9;</span><span style="white-space:pre">&#9;</span><span style="font-weight: bold; font-size: 14px;">Sonntag, 16. März 2014</span><br />
+			Keglerball:<span style="white-space:pre">&#9;</span><span style="font-weight: bold; font-size: 14px;">Samstag, 22. März 2014</span><br />
+			Startgebühr:<span style="white-space:pre">&#9;</span>30 € pro Kegelclub<br />
+			Modus:<span style="white-space:pre">&#9;</span><span style="white-space:pre">&#9;</span>vier Durchgänge mit jeweils 20 Wurf<br />
+			<span style="white-space:pre">&#9;</span><span style="white-space:pre">&#9;</span><span style="white-space:pre">&#9;</span>5 Wurf in die Vollen, 5 Wurf Abräumen,<br />
+			<span style="white-space:pre">&#9;</span><span style="white-space:pre">&#9;</span><span style="white-space:pre">&#9;</span>5 Wurf in die Vollen, 5 Wurf Abräumen<p />
+			<p>Solltet Ihr eine Frage oder eine Anmerkung haben oder sich ein Fehler eingeschlichen haben, könnt Ihr uns über das <a style="color: #E9E9E9" href="/ksm/kontakt">Kontakt-Formular</a> anschreiben. Wir antworten auf nützliche Tipps und Hinweise gerne und möglichst zeitnah.</p>
+			<p>Wir freuen uns nun auf eine spannende Stadtmeisterschaft.</p>
+			<p>Mit sportlichem Gruß<br />
+			Euer KC K.e.R.n.</p>
+			</div>
+	    </div>
     </jsp:body>
 </t:layout>
