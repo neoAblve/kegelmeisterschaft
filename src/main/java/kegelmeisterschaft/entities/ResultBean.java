@@ -61,6 +61,9 @@ public class ResultBean {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private PlayerBean player;
 
+    @Column(name = "year")
+    private String year;
+
     private transient String firstName;
     private transient String lastName;
 
@@ -204,11 +207,9 @@ public class ResultBean {
 
     @Override
     public String toString() {
-	return "ResultBean [id=" + id + ", club=" + club + ", player=" + player
-		+ ", round=" + round + ", singleRelevant=" + singleRelevant
-		+ ", clubRelevant=" + clubRelevant + ", checker=" + checker
-		+ ", v1=" + v1 + ", r1=" + r1 + ", v2=" + v2 + ", r2=" + r2
-		+ ", ninerCount=" + ninerCount + "]";
+	return "ResultBean [id=" + id + ", club=" + club + ", player=" + player + ", round=" + round
+		+ ", singleRelevant=" + singleRelevant + ", clubRelevant=" + clubRelevant + ", checker=" + checker
+		+ ", v1=" + v1 + ", r1=" + r1 + ", v2=" + v2 + ", r2=" + r2 + ", ninerCount=" + ninerCount + "]";
     }
 
     public int getScore() {
@@ -235,6 +236,14 @@ public class ResultBean {
 
     public void setReleased(String released) {
 	this.released = released;
+    }
+
+    public String getYear() {
+	return year;
+    }
+
+    public void setYear(String year) {
+	this.year = year;
     }
 
 }

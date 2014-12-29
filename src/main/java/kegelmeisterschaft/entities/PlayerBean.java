@@ -23,13 +23,15 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 @NamedQueries({
 	@NamedQuery(name = PlayerBean.FIND_BY_GENDER, query = "SELECT p FROM PlayerBean p WHERE p.gender = ?"),
 	@NamedQuery(name = PlayerBean.FIND_BY_CLUB, query = "SELECT p FROM PlayerBean p INNER JOIN p.clubs c WHERE c.name = ?"),
-	@NamedQuery(name = PlayerBean.FIND_BY_NAME, query = "SELECT p FROM PlayerBean p WHERE p.firstName = ? AND p.lastName = ?"), })
+	@NamedQuery(name = PlayerBean.FIND_BY_NAME, query = "SELECT p FROM PlayerBean p WHERE p.firstName = ? AND p.lastName = ?"),
+	@NamedQuery(name = PlayerBean.FIND_BY_NAME_AND_YEAR, query = "SELECT p FROM PlayerBean p WHERE p.firstName = ? AND p.lastName = ? and p.year = ?"), })
 @Table(name = "player")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class PlayerBean {
 
     public static final String FIND_BY_GENDER = "findPlayerByGender";
     public static final String FIND_BY_NAME = "findPlayerByName";
+    public static final String FIND_BY_NAME_AND_YEAR = "findPlayerByNameAndYear";
     public static final String FIND_BY_CLUB = "findPlayerByClub";
 
     public enum Gender {
@@ -49,6 +51,9 @@ public class PlayerBean {
 
     @Column(name = "lastName")
     private String lastName;
+
+    @Column(name = "year")
+    private String year;
 
     @ManyToOne(cascade = {}, fetch = FetchType.EAGER)
     @JoinColumn(name = "fk_singleLeagueClub")
@@ -141,6 +146,14 @@ public class PlayerBean {
 
     public void setSingleRelevant(boolean singleRelevant) {
 	this.singleRelevant = singleRelevant;
+    }
+
+    public String getYear() {
+	return year;
+    }
+
+    public void setYear(String year) {
+	this.year = year;
     }
 
 }

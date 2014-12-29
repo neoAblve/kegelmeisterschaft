@@ -22,15 +22,16 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 @Entity(name = "ClubBean")
-@NamedQueries({
-	@NamedQuery(name = ClubBean.FIND_BY_NAME, query = "SELECT c FROM ClubBean c WHERE c.name = ?"),//
-	@NamedQuery(name = ClubBean.FIND_BY_TYPE, query = "SELECT c FROM ClubBean c WHERE c.type = ?"),//
+@NamedQueries({ @NamedQuery(name = ClubBean.FIND_BY_NAME, query = "SELECT c FROM ClubBean c WHERE c.name = ?"),
+	@NamedQuery(name = ClubBean.FIND_BY_TYPE, query = "SELECT c FROM ClubBean c WHERE c.type = ?"), //
+	@NamedQuery(name = ClubBean.FIND_BY_YEAR, query = "SELECT c FROM ClubBean c WHERE c.year = ?"),//
 })
 @Table(name = "club")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class ClubBean {
     public static final String FIND_BY_NAME = "findClubByName";
     public static final String FIND_BY_TYPE = "findClubByType";
+    public static final String FIND_BY_YEAR = "findClubsByYear";
 
     public enum ClubType {
 	MALE, FEMALE, MIXED;
@@ -47,17 +48,15 @@ public class ClubBean {
     @Enumerated(EnumType.STRING)
     private ClubType type;
 
+    @Column(name = "year")
+    private String year;
+
     private String foundingYear;
     private int memberCount;
     private String location;
-    private String chairman;
-    private String address;
-    private String phone;
-    private String mail;
 
-    @ManyToMany(targetEntity = PlayerBean.class, fetch = FetchType.EAGER, cascade = {
-	    CascadeType.MERGE, CascadeType.REFRESH, CascadeType.REMOVE,
-	    CascadeType.DETACH })
+    @ManyToMany(targetEntity = PlayerBean.class, fetch = FetchType.EAGER, cascade = { CascadeType.MERGE,
+	    CascadeType.REFRESH, CascadeType.REMOVE, CascadeType.DETACH })
     @JoinTable(name = "club_player", joinColumns = { @JoinColumn(name = "club_id", referencedColumnName = "id") }, inverseJoinColumns = { @JoinColumn(name = "player_id", referencedColumnName = "id") })
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<PlayerBean> player = new HashSet<PlayerBean>();
@@ -104,30 +103,6 @@ public class ClubBean {
 
     public void setLocation(String location) {
 	this.location = location;
-    }
-
-    public String getChairman() {
-	return chairman;
-    }
-
-    public void setChairman(String chairman) {
-	this.chairman = chairman;
-    }
-
-    public String getPhone() {
-	return phone;
-    }
-
-    public void setPhone(String phone) {
-	this.phone = phone;
-    }
-
-    public String getMail() {
-	return mail;
-    }
-
-    public void setMail(String mail) {
-	this.mail = mail;
     }
 
     public Integer getId() {
@@ -180,19 +155,16 @@ public class ClubBean {
 
     @Override
     public String toString() {
-	return "ClubBean [id=" + id + ", name=" + name + ", type=" + type
-		+ ", foundingYear=" + foundingYear + ", memberCount="
-		+ memberCount + ", location=" + location + ", chairman="
-		+ chairman + ", address=" + address + ", phone=" + phone
-		+ ", mail=" + mail + ", player=" + player + "]";
+	return "ClubBean [id=" + id + ", name=" + name + ", type=" + type + ", foundingYear=" + foundingYear
+		+ ", memberCount=" + memberCount + ", location=" + location + ", player=" + player + "]";
     }
 
-    public String getAddress() {
-	return address;
+    public String getYear() {
+	return year;
     }
 
-    public void setAddress(String address) {
-	this.address = address;
+    public void setYear(String year) {
+	this.year = year;
     }
 
 }

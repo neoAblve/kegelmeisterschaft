@@ -31,13 +31,15 @@ public class EventBean {
     public static final String FIND_BY_CHECKER_CLUB = "findEventsByCheckerClub";
     public static final String FIND_BY_CLUB_AND_ROUND = "findEventsByClubAndRound";
 
-    private static final SimpleDateFormat IMPORT_FORMAT = new SimpleDateFormat(
-	    "dd.MM.yyyy, HH:mm 'Uhr'");
+    private static final SimpleDateFormat IMPORT_FORMAT = new SimpleDateFormat("dd.MM.yyyy, HH:mm 'Uhr'");
 
     @Id
     @GeneratedValue
     @Column(name = "id")
     private Integer id;
+
+    @Column(name = "year")
+    private String year;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = true)
     @JoinColumn(name = "fk_club", updatable = true, nullable = true)
@@ -142,8 +144,8 @@ public class EventBean {
 
     @Override
     public String toString() {
-	return "EventBean [id=" + id + ", club=" + club + ", round=" + round
-		+ ", date=" + date + ", location=" + location + "]";
+	return "EventBean [id=" + id + ", club=" + club + ", round=" + round + ", date=" + date + ", location="
+		+ location + "]";
     }
 
     public String getClubName() {
@@ -152,6 +154,14 @@ public class EventBean {
 
     public void setClubName(String clubName) {
 	this.clubName = clubName;
+    }
+
+    public String getYear() {
+	return year;
+    }
+
+    public void setYear(String year) {
+	this.year = year;
     }
 
 }
