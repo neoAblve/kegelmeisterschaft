@@ -114,8 +114,8 @@
 	  	<div id="footer">
 	  		<div class="left"> 
 		  		<a href="/ksm/impressum">&#60;Impressum&#62;</a>  
-		  		<a href="/downloads/KSM_Satzung.pdf" target="_blank">&#60;Satzung der KSM 2015&#62;</a>
-		  		<a href="/downloads/Wertungsbogen_KSM14.pdf" target="_blank">&#60;Wertungsbogen&#62;</a>
+		  		<a href="/downloads/KSM_Satzung.pdf" target="_blank">&#60;Satzung der KSM&#62;</a>
+		  		<a href="/downloads/Wertungsbogen_2015.pdf" target="_blank">&#60;Wertungsbogen&#62;</a>
 	  		</div>
 	  		<div class="right">
 		  		Copyright (c) 2014 ksm-balve.de - All Rights Reserved.
