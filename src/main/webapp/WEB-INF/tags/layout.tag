@@ -60,26 +60,40 @@
 			<ul class="nav-links">
 		    	<li><a href="/ksm/">Start</a></li>
 		    	<li><a href="/ksm/news">News</a></li>
-		    	<li style="width: 80px;"><a href="/ksm/clubs/herren">Clubwertung</a>
+		    	<!-- 
+		    	<li><a href="/ksm/2015/ausrichter">Ausrichter</a>
 		    		<ul>
-		    			<li style="width: 80px; margin-top: 3px;" class="sub"><a href="/ksm/clubs/herren">&#62; Herren</a></li>
-		    			<li style="width: 80px;" class="sub"><a href="/ksm/clubs/damen">&#62; Damen</a></li>
-		    			<li style="width: 80px;" class="sub"><a href="/ksm/clubs/mixed">&#62; Mixed</a></li>
+		    			<li style="width: 150px; margin-top: 3px;" class="sub"><a href="/ksm/2015/ausrichter">&#62; 2015 - KC After Nine</a></li>
+		    			<li style="width: 150px;" class="sub"><a href="/ksm/2014/ausrichter">&#62; 2014 - Kc K.e.R.n</a></li>
 		    		</ul>
 		    	</li>
-		    	<li style="width: 90px;" ><a href="/ksm/einzel/herren">Einzelwertung</a>
+		    	 -->
+		    	<li style="width: 40px;"><a href="/ksm/clubs/herren">Clubs</a>
+		    		<ul>
+		    			<li style="width: 90px; margin-top: 3px;" class="sub"><a href="/ksm/clubs/herren">&#62; Herren</a></li>
+		    			<li style="width: 90px;" class="sub"><a href="/ksm/clubs/damen">&#62; Damen</a></li>
+		    			<li style="width: 90px;" class="sub"><a href="/ksm/clubs/mixed">&#62; Mixed</a></li>
+		    		</ul>
+		    	</li>
+		    	<li style="width: 40px;"><a href="/ksm/einzel/herren">Einzel</a>
 		    		<ul>
 		    			<li style="width: 90px; margin-top: 3px;" class="sub"><a href="/ksm/einzel/herren">&#62; Herren</a></li>
 		    			<li style="width: 90px;" class="sub"><a href="/ksm/einzel/damen">&#62; Damen</a></li>
 		    		</ul>
 		    	</li>
-		    	<li style="width: 130px;"><a href="/ksm/aufschreiber/herren">Aufschreiberwertung</a>
+		    	<li style="width: 80px;"><a href="/ksm/aufschreiber/herren">Aufschreiber</a>
 		    		<ul>
-		    			<li class="sub" style="width: 130px; margin-top: 3px;"><a href="/ksm/aufschreiber/herren">&#62; Herren</a></li>
-		    			<li class="sub" style="width: 130px;"><a href="/ksm/aufschreiber/damen">&#62; Damen</a></li>
+		    			<li class="sub" style="width: 90px; margin-top: 3px;"><a href="/ksm/aufschreiber/herren">&#62; Herren</a></li>
+		    			<li class="sub" style="width: 90px;"><a href="/ksm/aufschreiber/damen">&#62; Damen</a></li>
 		    		</ul>
 		    	</li>
 		    	<li><a href="/ksm/termine">Termine</a></li>
+		    	<li><a href="/ksm/2014/kinder">Spezialkegeln</a>
+		    		<ul>
+		    			<li class="sub" style="width: 130px; margin-top: 3px;"><a href="/ksm/2014/kinder">&#62; Kinderkegeln</a></li>
+		    			<li class="sub" style="width: 130px;"><a href="/ksm/2014/tandem">&#62; Tandemkegeln</a></li>
+		    		</ul>
+		    	</li>
 		    	<!-- <li><a href="/ksm/kinder">Kinderkegeln</a></li> -->
 		    	<!-- <li><a href="/ksm/tandem">Tandemkegeln</a></li> -->
 		    	<li><a href="/ksm/gaestebuch">Gästebuch</a></li>

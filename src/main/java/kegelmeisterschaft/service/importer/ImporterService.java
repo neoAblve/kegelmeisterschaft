@@ -1,14 +1,13 @@
 package kegelmeisterschaft.service.importer;
 
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
+import java.text.ParseException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
+import java.util.TreeMap;
 
 import kegelmeisterschaft.dao.ClubHome;
 import kegelmeisterschaft.dao.EventHome;
@@ -21,22 +20,20 @@ import kegelmeisterschaft.entities.ResultBean;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassRelativeResourceLoader;
-import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-
-import au.com.bytecode.opencsv.CSVReader;
-import au.com.bytecode.opencsv.bean.CsvToBean;
-import au.com.bytecode.opencsv.bean.HeaderColumnNameTranslateMappingStrategy;
-
-import com.google.common.collect.Sets;
 
 @Component
 @Transactional
 public class ImporterService {
 
-    private static final Set<String> YEARS = Sets.newHashSet("2014");
+    @SuppressWarnings("serial")
+    private static final Map<String, Importer> YEARS = new TreeMap<String, Importer>() {
+	{
+	    // put("2014", new CSVImporter());
+	    put("2015", new XLSXImporter());
+	}
+    };
 
     @Autowired
     private ClubHome clubHome;
@@ -47,7 +44,7 @@ public class ImporterService {
     @Autowired
     private ResultHome resultHome;
 
-    public void performImport() throws IOException {
+    public void performImport() throws IOException, ParseException {
 	System.out.println("Clear existing Data ...");
 	resultHome.removeAll();
 	eventHome.removeAll();
@@ -55,7 +52,9 @@ public class ImporterService {
 	playerHome.removeAll();
 	System.out.println("Clearing done.");
 
-	for (String year : YEARS) {
+	// TODO reset BaseSequences
+
+	for (String year : YEARS.keySet()) {
 	    System.out.println(year);
 	    importClubs(year);
 	    importEvents(year);
@@ -70,7 +69,7 @@ public class ImporterService {
 	List<ClubBean> clubs = clubHome.listByNamedQuery(ClubBean.FIND_BY_YEAR, year);
 	for (ClubBean club : clubs) {
 	    System.out.println("\tworking on Club: " + club.getName());
-	    List<ResultBean> results = getResultsToImportByClub(club);
+	    List<ResultBean> results = YEARS.get(year).getResultsByClub(club);
 	    for (ResultBean result : results) {
 		if (!StringUtils.equals("true", result.getReleased()))
 		    continue;
@@ -107,12 +106,12 @@ public class ImporterService {
 	System.out.println("results imported");
     }
 
-    private void importEvents(String year) throws IOException {
+    private void importEvents(String year) throws IOException, ParseException {
 	HashMap<String, ClubBean> clubMap = new HashMap<String, ClubBean>();
 	for (ClubBean club : clubHome.listByNamedQuery(ClubBean.FIND_BY_YEAR, year))
 	    clubMap.put(club.getName(), club);
 
-	List<EventBean> eventsToImport = getEventsToImport(year);
+	List<EventBean> eventsToImport = YEARS.get(year).getEventsByYear(year);
 	System.out.println("Importing " + eventsToImport.size() + " Events");
 	for (EventBean event : eventsToImport) {
 	    System.out.println("\tevent: " + event);
@@ -179,7 +178,7 @@ public class ImporterService {
 	System.out.println("Importing Player of clubs");
 	for (ClubBean club : clubHome.listByNamedQuery(ClubBean.FIND_BY_YEAR, year)) {
 	    System.out.println("\tworking on Club: " + club.getName());
-	    List<PlayerBean> players = getPlayerToImportByClub(club);
+	    List<PlayerBean> players = YEARS.get(year).getPlayerByClub(club);
 	    for (PlayerBean player : players) {
 		PlayerKey playerKey = new PlayerKey(player.getFirstName(), player.getLastName());
 		System.out.println("\t\tworking on " + playerKey);
@@ -226,96 +225,12 @@ public class ImporterService {
 
     private void importClubs(String year) throws IOException {
 	System.out.println("Importing Clubs ...");
-	for (ClubBean club : getClubsToImport(year)) {
+	List<ClubBean> clubsByYear = YEARS.get(year).getClubsByYear(year);
+	for (ClubBean club : clubsByYear) {
 	    System.out.println("\tClub: " + club.getName());
 	    club.setYear(year);
 	    clubHome.createOrUpdate(club);
 	}
-	System.out.println("clubs imported");
-    }
-
-    private List<ClubBean> getClubsToImport(String year) throws IOException {
-	Map<String, String> columnMapping = new HashMap<String, String>();
-	columnMapping.put("name", "name");
-	columnMapping.put("type", "typefromString");
-	columnMapping.put("foundingYear", "foundingYear");
-	columnMapping.put("memberCount", "memberCount");
-	columnMapping.put("location", "location");
-
-	HeaderColumnNameTranslateMappingStrategy<ClubBean> strategy = new HeaderColumnNameTranslateMappingStrategy<ClubBean>();
-	strategy.setType(ClubBean.class);
-	strategy.setColumnMapping(columnMapping);
-
-	Resource resource = new ClassRelativeResourceLoader(ImporterService.class).getResource(year + "/clubs.txt");
-	CSVReader reader = new CSVReader(new InputStreamReader(resource.getInputStream(), "UTF-16"), '\t');
-	CsvToBean<ClubBean> bean = new CsvToBean<ClubBean>();
-	return bean.parse(strategy, reader);
-    }
-
-    private List<EventBean> getEventsToImport(String year) throws IOException {
-	Map<String, String> columnMapping = new HashMap<String, String>();
-	columnMapping.put("date", "dateImport");
-	columnMapping.put("clubName", "clubName");
-	columnMapping.put("round", "round");
-	columnMapping.put("location", "location");
-	columnMapping.put("checker1Club", "checker1ClubImport");
-	columnMapping.put("checker2Club", "checker2ClubImport");
-
-	HeaderColumnNameTranslateMappingStrategy<EventBean> strategy = new HeaderColumnNameTranslateMappingStrategy<EventBean>();
-	strategy.setType(EventBean.class);
-	strategy.setColumnMapping(columnMapping);
-
-	Resource resource = new ClassRelativeResourceLoader(ImporterService.class).getResource(year + "/events.txt");
-	CSVReader reader = new CSVReader(new InputStreamReader(resource.getInputStream(), "UTF-16"), '\t');
-	CsvToBean<EventBean> bean = new CsvToBean<EventBean>();
-	return bean.parse(strategy, reader);
-    }
-
-    private List<PlayerBean> getPlayerToImportByClub(ClubBean club) throws IOException {
-	Map<String, String> columnMapping = new HashMap<String, String>();
-	columnMapping.put("firstName", "firstName");
-	columnMapping.put("lastName", "lastName");
-	columnMapping.put("gender", "gender");
-	columnMapping.put("singleRelevant", "singleRelevant");
-
-	HeaderColumnNameTranslateMappingStrategy<PlayerBean> strategy = new HeaderColumnNameTranslateMappingStrategy<PlayerBean>();
-	strategy.setType(PlayerBean.class);
-	strategy.setColumnMapping(columnMapping);
-
-	Resource resource = new ClassRelativeResourceLoader(ImporterService.class).getResource(club.getYear()
-		+ "/player/" + club.getName() + ".txt");
-	CSVReader reader = new CSVReader(new InputStreamReader(resource.getInputStream(), "UTF-16"), '\t');
-	CsvToBean<PlayerBean> bean = new CsvToBean<PlayerBean>();
-	return bean.parse(strategy, reader);
-    }
-
-    private List<ResultBean> getResultsToImportByClub(ClubBean club) {
-	try {
-	    Map<String, String> columnMapping = new HashMap<String, String>();
-	    columnMapping.put("firstName", "firstName");
-	    columnMapping.put("lastName", "lastName");
-	    columnMapping.put("round", "round");
-	    columnMapping.put("specialType", "specialType");
-	    columnMapping.put("v1", "v1");
-	    columnMapping.put("r1", "r1");
-	    columnMapping.put("v2", "v2");
-	    columnMapping.put("r2", "r2");
-	    columnMapping.put("9er", "ninerCount");
-	    columnMapping.put("released", "released");
-
-	    HeaderColumnNameTranslateMappingStrategy<ResultBean> strategy = new HeaderColumnNameTranslateMappingStrategy<ResultBean>();
-	    strategy.setType(ResultBean.class);
-	    strategy.setColumnMapping(columnMapping);
-
-	    Resource resource = new ClassRelativeResourceLoader(ImporterService.class).getResource(club.getYear()
-		    + "/results/" + club.getName() + ".txt");
-	    CSVReader reader = new CSVReader(new InputStreamReader(resource.getInputStream(), "UTF-16"), '\t');
-	    CsvToBean<ResultBean> bean = new CsvToBean<ResultBean>();
-	    return bean.parse(strategy, reader);
-	} catch (Exception e) {
-	    System.out.println("Keine Results für " + club.getName() + "gefunden");
-	    e.printStackTrace();
-	    return new ArrayList<ResultBean>();
-	}
+	System.out.println(clubsByYear.size() + " clubs imported");
     }
 }

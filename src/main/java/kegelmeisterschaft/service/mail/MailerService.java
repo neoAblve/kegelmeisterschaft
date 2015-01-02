@@ -19,15 +19,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class MailerService {
 
-    private static final SimpleDateFormat sdf = new SimpleDateFormat(
-	    "dd.MM.yyyy HH:mm.ss");
+    private static final SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm.ss");
 
     public boolean sendInfoMail(ContactModel contact) {
 	try {
 	    Properties props = System.getProperties();
 	    // Gmail
 	    final String username = "mathis.schweitzer";
-	    final String password = "p7zVKZJP";
+	    final String password = "p7zVKZJP1";
 	    props.put("mail.smtp.host", "smtp.gmail.com");
 	    props.put("mail.smtp.port", "587");
 	    props.put("mail.smtp.auth", "true");
@@ -56,19 +55,15 @@ public class MailerService {
 
 	    MimeMessage msg = new MimeMessage(session);
 	    msg.setFrom(new InternetAddress(username));
-	    msg.setReplyTo(new Address[] { new InternetAddress(contact
-		    .getEmail(), contact.getName()) });
-	    msg.addRecipient(Message.RecipientType.TO, new InternetAddress(
-		    "fragen@ksm-balve.de", "Fragen KSM-Balve"));
+	    msg.setReplyTo(new Address[] { new InternetAddress(contact.getEmail(), contact.getName()) });
+	    msg.addRecipient(Message.RecipientType.TO, new InternetAddress("fragen@ksm-balve.de", "Fragen KSM-Balve"));
 
 	    String sentDate = sdf.format(new Date());
-	    String subject = "Anfrage von " + contact.getName() + " am "
-		    + sentDate;
+	    String subject = "Anfrage von " + contact.getName() + " am " + sentDate;
 	    msg.setSubject(subject, "UTF-8");
 
-	    String message = "Nachricht von " + contact.getName() + " ("
-		    + contact.getEmail() + ") abgeschickt um " + sentDate
-		    + ": " + contact.getMessage();
+	    String message = "Nachricht von " + contact.getName() + " (" + contact.getEmail() + ") abgeschickt um "
+		    + sentDate + ": " + contact.getMessage();
 	    msg.setContent(message, "text/plain; charset=UTF-8");
 	    System.out.println(subject);
 	    System.out.println(message);

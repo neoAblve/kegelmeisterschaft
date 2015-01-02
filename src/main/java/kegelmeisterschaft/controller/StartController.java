@@ -4,6 +4,7 @@ import kegelmeisterschaft.service.result.ResultService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -36,16 +37,16 @@ public class StartController {
 	return mv;
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/kinder")
-    public ModelAndView kids() {
-	ModelAndView mv = new ModelAndView("kids");
+    @RequestMapping(method = RequestMethod.GET, value = "/{year}/kinder")
+    public ModelAndView kids(@PathVariable("year") String year) {
+	ModelAndView mv = new ModelAndView(year + "/kids");
 	mv.addObject("headTop", resultService.getNextHeadModel());
 	return mv;
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/tandem")
-    public ModelAndView tandem() {
-	ModelAndView mv = new ModelAndView("tandem");
+    @RequestMapping(method = RequestMethod.GET, value = "/{year}/tandem")
+    public ModelAndView tandem(@PathVariable("year") String year) {
+	ModelAndView mv = new ModelAndView(year + "/tandem");
 	mv.addObject("headTop", resultService.getNextHeadModel());
 	return mv;
     }

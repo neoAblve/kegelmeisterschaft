@@ -12,8 +12,7 @@ import org.apache.log4j.Logger;
 
 public class RoundResultModel {
 
-    private static final Logger logger = Logger
-	    .getLogger(RoundResultModel.class);
+    private static final Logger logger = Logger.getLogger(RoundResultModel.class);
 
     public static final Comparator<RoundResultModel> ROUND_TOTAL_COMPARATOR = new Comparator<RoundResultModel>() {
 	@Override
@@ -39,10 +38,8 @@ public class RoundResultModel {
 	@Override
 	public int compare(RoundResultModel o1, RoundResultModel o2) {
 	    CompareToBuilder builder = new CompareToBuilder();
-	    builder.append(o1.getFirstRoundResult().getScore(), o2
-		    .getFirstRoundResult().getScore());
-	    builder.append(o1.getFirstRoundResult().getNinerCount(), o2
-		    .getFirstRoundResult().getNinerCount());
+	    builder.append(o1.getFirstRoundResult().getScore(), o2.getFirstRoundResult().getScore());
+	    builder.append(o1.getFirstRoundResult().getNinerCount(), o2.getFirstRoundResult().getNinerCount());
 	    builder.append(o1.getTotalNinerCount(), o2.getTotalNinerCount());
 	    builder.append(o1.getTotalScore(), o2.getTotalScore());
 	    builder.append(o1.getTopRoundScore(), o2.getTopRoundScore());
@@ -53,10 +50,8 @@ public class RoundResultModel {
 	@Override
 	public int compare(RoundResultModel o1, RoundResultModel o2) {
 	    CompareToBuilder builder = new CompareToBuilder();
-	    builder.append(o1.getFirstRoundResult().getNinerCount(), o2
-		    .getFirstRoundResult().getNinerCount());
-	    builder.append(o1.getFirstRoundResult().getScore(), o2
-		    .getFirstRoundResult().getScore());
+	    builder.append(o1.getFirstRoundResult().getNinerCount(), o2.getFirstRoundResult().getNinerCount());
+	    builder.append(o1.getFirstRoundResult().getScore(), o2.getFirstRoundResult().getScore());
 	    builder.append(o1.getTotalNinerCount(), o2.getTotalNinerCount());
 	    builder.append(o1.getTotalScore(), o2.getTotalScore());
 	    builder.append(o1.getTopRoundScore(), o2.getTopRoundScore());
@@ -67,10 +62,8 @@ public class RoundResultModel {
 	@Override
 	public int compare(RoundResultModel o1, RoundResultModel o2) {
 	    CompareToBuilder builder = new CompareToBuilder();
-	    builder.append(o1.getSecondRoundResult().getScore(), o2
-		    .getSecondRoundResult().getScore());
-	    builder.append(o1.getSecondRoundResult().getNinerCount(), o2
-		    .getSecondRoundResult().getNinerCount());
+	    builder.append(o1.getSecondRoundResult().getScore(), o2.getSecondRoundResult().getScore());
+	    builder.append(o1.getSecondRoundResult().getNinerCount(), o2.getSecondRoundResult().getNinerCount());
 	    builder.append(o1.getTotalNinerCount(), o2.getTotalNinerCount());
 	    builder.append(o1.getTotalScore(), o2.getTotalScore());
 	    builder.append(o1.getTopRoundScore(), o2.getTopRoundScore());
@@ -81,10 +74,8 @@ public class RoundResultModel {
 	@Override
 	public int compare(RoundResultModel o1, RoundResultModel o2) {
 	    CompareToBuilder builder = new CompareToBuilder();
-	    builder.append(o1.getSecondRoundResult().getNinerCount(), o2
-		    .getSecondRoundResult().getNinerCount());
-	    builder.append(o1.getSecondRoundResult().getScore(), o2
-		    .getSecondRoundResult().getScore());
+	    builder.append(o1.getSecondRoundResult().getNinerCount(), o2.getSecondRoundResult().getNinerCount());
+	    builder.append(o1.getSecondRoundResult().getScore(), o2.getSecondRoundResult().getScore());
 	    builder.append(o1.getTotalNinerCount(), o2.getTotalNinerCount());
 	    builder.append(o1.getTotalScore(), o2.getTotalScore());
 	    builder.append(o1.getTopRoundScore(), o2.getTopRoundScore());
@@ -95,10 +86,8 @@ public class RoundResultModel {
 	@Override
 	public int compare(RoundResultModel o1, RoundResultModel o2) {
 	    CompareToBuilder builder = new CompareToBuilder();
-	    builder.append(o1.getThirdRoundResult().getScore(), o2
-		    .getThirdRoundResult().getScore());
-	    builder.append(o1.getThirdRoundResult().getNinerCount(), o2
-		    .getThirdRoundResult().getNinerCount());
+	    builder.append(o1.getThirdRoundResult().getScore(), o2.getThirdRoundResult().getScore());
+	    builder.append(o1.getThirdRoundResult().getNinerCount(), o2.getThirdRoundResult().getNinerCount());
 	    builder.append(o1.getTotalNinerCount(), o2.getTotalNinerCount());
 	    builder.append(o1.getTotalScore(), o2.getTotalScore());
 	    builder.append(o1.getTopRoundScore(), o2.getTopRoundScore());
@@ -109,10 +98,8 @@ public class RoundResultModel {
 	@Override
 	public int compare(RoundResultModel o1, RoundResultModel o2) {
 	    CompareToBuilder builder = new CompareToBuilder();
-	    builder.append(o1.getThirdRoundResult().getNinerCount(), o2
-		    .getThirdRoundResult().getNinerCount());
-	    builder.append(o1.getThirdRoundResult().getScore(), o2
-		    .getThirdRoundResult().getScore());
+	    builder.append(o1.getThirdRoundResult().getNinerCount(), o2.getThirdRoundResult().getNinerCount());
+	    builder.append(o1.getThirdRoundResult().getScore(), o2.getThirdRoundResult().getScore());
 	    builder.append(o1.getTotalNinerCount(), o2.getTotalNinerCount());
 	    builder.append(o1.getTotalScore(), o2.getTotalScore());
 	    builder.append(o1.getTopRoundScore(), o2.getTopRoundScore());
@@ -123,10 +110,8 @@ public class RoundResultModel {
 	@Override
 	public int compare(RoundResultModel o1, RoundResultModel o2) {
 	    CompareToBuilder builder = new CompareToBuilder();
-	    builder.append(o1.getFourthRoundResult().getScore(), o2
-		    .getFourthRoundResult().getScore());
-	    builder.append(o1.getFourthRoundResult().getNinerCount(), o2
-		    .getFourthRoundResult().getNinerCount());
+	    builder.append(o1.getFourthRoundResult().getScore(), o2.getFourthRoundResult().getScore());
+	    builder.append(o1.getFourthRoundResult().getNinerCount(), o2.getFourthRoundResult().getNinerCount());
 	    builder.append(o1.getTotalNinerCount(), o2.getTotalNinerCount());
 	    builder.append(o1.getTotalScore(), o2.getTotalScore());
 	    builder.append(o1.getTopRoundScore(), o2.getTopRoundScore());
@@ -137,10 +122,8 @@ public class RoundResultModel {
 	@Override
 	public int compare(RoundResultModel o1, RoundResultModel o2) {
 	    CompareToBuilder builder = new CompareToBuilder();
-	    builder.append(o1.getFourthRoundResult().getNinerCount(), o2
-		    .getFourthRoundResult().getNinerCount());
-	    builder.append(o1.getFourthRoundResult().getScore(), o2
-		    .getFourthRoundResult().getScore());
+	    builder.append(o1.getFourthRoundResult().getNinerCount(), o2.getFourthRoundResult().getNinerCount());
+	    builder.append(o1.getFourthRoundResult().getScore(), o2.getFourthRoundResult().getScore());
 	    builder.append(o1.getTotalNinerCount(), o2.getTotalNinerCount());
 	    builder.append(o1.getTotalScore(), o2.getTotalScore());
 	    builder.append(o1.getTopRoundScore(), o2.getTopRoundScore());
@@ -150,7 +133,7 @@ public class RoundResultModel {
 
     public static final HashMap<String, Comparator<RoundResultModel>> ORDERS = new HashMap<String, Comparator<RoundResultModel>>();
     static {
-	ORDERS.put("", RoundResultModel.ROUND_TOTAL_COMPARATOR);
+	// ORDERS.put("", RoundResultModel.ROUND_TOTAL_COMPARATOR);
 	ORDERS.put("total_score", RoundResultModel.ROUND_TOTAL_COMPARATOR);
 	ORDERS.put("total_niner", RoundResultModel.ROUND_TOTAL_NINER_COMPARATOR);
 	ORDERS.put("r1_score", RoundResultModel.ROUND_1_SCORE_COMPARATOR);

@@ -9,7 +9,7 @@
 		<!-- Start Right Content -->
 	   	<div class="rightcolumn">
 	     	<h1>Update</h1>
-	     	Pünktlich zum Jahreswechsel präsentiert sich auf ksm-balve.de auch der neue Ausrichter "KC After Nine dfmA".
+	     	Pünktlich zum Jahreswechsel präsentiert sich auf ksm-balve.de auch der neue Ausrichter "KC After - Nine dfmA".
 	     	Wir freuen uns auf eine aufregende Stadtmeisterschaft.
 	    </div>
 	   	<div class="rightcolumn">

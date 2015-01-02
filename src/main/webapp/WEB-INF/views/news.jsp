@@ -4,7 +4,7 @@
 <t:layout>
 	<jsp:attribute name="wide">true</jsp:attribute>
     <jsp:body>
-    	<h1>Neuigkeiten rund um die KSM 2014</h1>
+    	<h1>Neuigkeiten rund um die Kegelstadtmeisterschaft</h1>
     	<div class="news">
 	     	<h1>Ergebnis-Upload am 09. März</h1>
 	     	Im Upload enthalten sind folgende Wertungsdurchgänge:

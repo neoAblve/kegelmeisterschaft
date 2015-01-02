@@ -1,6 +1,7 @@
 package kegelmeisterschaft.controller;
 
 import java.io.IOException;
+import java.text.ParseException;
 
 import kegelmeisterschaft.service.importer.ImporterService;
 import kegelmeisterschaft.service.result.ResultService;
@@ -23,9 +24,8 @@ public class ImportController {
     private ResultService resultService;
 
     @RequestMapping(method = RequestMethod.GET, value = "/import/{pwd}")
-    public ModelAndView importData(@PathVariable("pwd") String pwd)
-	    throws IOException {
-	if (StringUtils.equals(pwd, "kern"))
+    public ModelAndView importData(@PathVariable("pwd") String pwd) throws IOException, ParseException {
+	if (StringUtils.equals(pwd, "nine"))
 	    importService.performImport();
 	ModelAndView mv = new ModelAndView("start");
 	mv.addObject("headTop", resultService.getNextHeadModel());

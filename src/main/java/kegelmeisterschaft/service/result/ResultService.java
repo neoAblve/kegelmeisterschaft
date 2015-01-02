@@ -49,17 +49,17 @@ public class ResultService {
     @Autowired
     private ResultHome resultHome;
 
-    public List<ClubResultModel> provideClubsResultsByType(ClubType type,
-	    Comparator<RoundResultModel> comp, boolean desc) {
+    public List<ClubResultModel> provideClubsResultsByType(ClubType type, Comparator<RoundResultModel> comp,
+	    boolean desc) {
 	List<ClubResultModel> results = new ArrayList<ClubResultModel>();
-	for (ClubBean club : clubHome.listByNamedQuery(ClubBean.FIND_BY_TYPE,
-		type))
-	    results.add(new ClubResultModel(club, resultHome.listByNamedQuery(
-		    ResultBean.FIND_BY_CLUB, club)));
+	for (ClubBean club : clubHome.listByNamedQuery(ClubBean.FIND_BY_TYPE, type))
+	    results.add(new ClubResultModel(club, resultHome.listByNamedQuery(ResultBean.FIND_BY_CLUB, club)));
 
-	if (comp == null)
-	    comp = RoundResultModel.ROUND_TOTAL_COMPARATOR;
-	Collections.sort(results, comp);
+	if (comp != null)
+	    Collections.sort(results, comp);
+	else
+	    Collections.sort(results, ClubResultModel.CLUB_ROUND_TOTAL_COMPARATOR);
+
 	if (desc)
 	    Collections.reverse(results);
 	return results;
@@ -70,16 +70,12 @@ public class ResultService {
 	if (club == null)
 	    return null;
 	Map<PlayerBean, List<ResultBean>> playerResults = new HashMap<PlayerBean, List<ResultBean>>();
-	for (PlayerBean player : playerHome.listByNamedQuery(
-		PlayerBean.FIND_BY_CLUB, club.getName()))
-	    playerResults.put(player, resultHome.listByNamedQuery(
-		    ResultBean.FIND_BY_PLAYER_AND_CLUB, player, club));
+	for (PlayerBean player : playerHome.listByNamedQuery(PlayerBean.FIND_BY_CLUB, club.getName()))
+	    playerResults.put(player, resultHome.listByNamedQuery(ResultBean.FIND_BY_PLAYER_AND_CLUB, player, club));
 
-	return new ClubDetailResultModel(club, resultHome.listByNamedQuery(
-		ResultBean.FIND_BY_CLUB, club), playerResults,
-		eventHome.listByNamedQuery(EventBean.FIND_BY_CLUB, club),
-		eventHome.listByNamedQuery(EventBean.FIND_BY_CHECKER_CLUB,
-			club, club));
+	return new ClubDetailResultModel(club, resultHome.listByNamedQuery(ResultBean.FIND_BY_CLUB, club),
+		playerResults, eventHome.listByNamedQuery(EventBean.FIND_BY_CLUB, club), eventHome.listByNamedQuery(
+			EventBean.FIND_BY_CHECKER_CLUB, club, club));
     }
 
     public PlayerDetailModel providePlayerDetails(int id) {
@@ -88,37 +84,35 @@ public class ResultService {
 	    return null;
 
 	HashMap<ClubBean, List<EventBean>> events = new HashMap<ClubBean, List<EventBean>>();
-	List<ResultBean> results = resultHome.listByNamedQuery(
-		ResultBean.FIND_BY_PLAYER_ALL, player);
+	List<ResultBean> results = resultHome.listByNamedQuery(ResultBean.FIND_BY_PLAYER_ALL, player);
 	for (ResultBean result : results) {
 	    ClubBean club = result.getClub();
 	    List<EventBean> clubEvents = events.get(club);
 	    if (clubEvents == null)
-		events.put(club, eventHome.listByNamedQuery(
-			EventBean.FIND_BY_CLUB, club));
+		events.put(club, eventHome.listByNamedQuery(EventBean.FIND_BY_CLUB, club));
 	}
 
 	return new PlayerDetailModel(player, results, events);
     }
 
-    public List<PlayerResultModel> providePlayerResultsByGender(Gender gender,
-	    Comparator<RoundResultModel> comp, boolean desc) {
+    public List<PlayerResultModel> providePlayerResultsByGender(Gender gender, Comparator<RoundResultModel> comp,
+	    boolean desc) {
 	List<PlayerResultModel> results = new ArrayList<PlayerResultModel>();
-	List<PlayerBean> players = playerHome.listByNamedQuery(
-		PlayerBean.FIND_BY_GENDER, gender.toString());
+	List<PlayerBean> players = playerHome.listByNamedQuery(PlayerBean.FIND_BY_GENDER, gender.toString());
 	for (PlayerBean player : players) {
 	    if (player.getSingleLeagueClub() == null)
 		continue;
-	    List<ResultBean> playerResults = resultHome.listByNamedQuery(
-		    ResultBean.FIND_BY_PLAYER, player);
+	    List<ResultBean> playerResults = resultHome.listByNamedQuery(ResultBean.FIND_BY_PLAYER, player);
 	    if (playerResults.size() == 0)
 		playerResults = new ArrayList<ResultBean>();
 	    results.add(new PlayerResultModel(player, playerResults));
 	}
 
-	if (comp == null)
-	    comp = RoundResultModel.ROUND_TOTAL_COMPARATOR;
-	Collections.sort(results, comp);
+	if (comp != null)
+	    Collections.sort(results, comp);
+	else
+	    Collections.sort(results, PlayerResultModel.PLAYER_ROUND_TOTAL_COMPARATOR);
+
 	if (desc)
 	    Collections.reverse(results);
 	return results;
@@ -126,24 +120,20 @@ public class ResultService {
 
     public List<CheckerResultModel> provideCheckerResultsByGender(Gender gender) {
 	Map<PlayerBean, Set<ResultBean>> checkerResultMap = new HashMap<PlayerBean, Set<ResultBean>>();
-	for (ResultBean result : resultHome.listByNamedQuery(
-		ResultBean.FIND_CHECKER_RESULTS_BY_GENDER, gender.toString())) {
-	    Set<ResultBean> checkerResult = checkerResultMap.get(result
-		    .getPlayer());
+	for (ResultBean result : resultHome.listByNamedQuery(ResultBean.FIND_CHECKER_RESULTS_BY_GENDER,
+		gender.toString())) {
+	    Set<ResultBean> checkerResult = checkerResultMap.get(result.getPlayer());
 	    if (checkerResult == null) {
-		checkerResult = new TreeSet<ResultBean>(
-			ResultBean.SCORE_COMPARATOR);
+		checkerResult = new TreeSet<ResultBean>(ResultBean.SCORE_COMPARATOR);
 		checkerResultMap.put(result.getPlayer(), checkerResult);
 	    }
 	    checkerResult.add(result);
 	}
 
 	List<CheckerResultModel> results = new ArrayList<CheckerResultModel>();
-	for (Entry<PlayerBean, Set<ResultBean>> entry : checkerResultMap
-		.entrySet()) {
+	for (Entry<PlayerBean, Set<ResultBean>> entry : checkerResultMap.entrySet()) {
 	    ResultBean result = entry.getValue().iterator().next();
-	    EventBean event = eventHome.findExactlyOneByNamedQuery(
-		    EventBean.FIND_BY_CLUB_AND_ROUND, result.getClub(),
+	    EventBean event = eventHome.findExactlyOneByNamedQuery(EventBean.FIND_BY_CLUB_AND_ROUND, result.getClub(),
 		    result.getRound());
 	    results.add(new CheckerResultModel(event, result));
 	}
@@ -174,20 +164,19 @@ public class ResultService {
 	HeadTopModel model = new HeadTopModel(type);
 	switch (type) {
 	case 1:
-	    model.fillWithClubs(provideClubsResultsByType(ClubType.FEMALE,
-		    RoundResultModel.ROUND_TOTAL_COMPARATOR, true));
+	    model.fillWithClubs(provideClubsResultsByType(ClubType.FEMALE, RoundResultModel.ROUND_TOTAL_COMPARATOR,
+		    true));
 	    break;
 	case 2:
-	    model.fillWithClubs(provideClubsResultsByType(ClubType.MIXED,
-		    RoundResultModel.ROUND_TOTAL_COMPARATOR, true));
+	    model.fillWithClubs(provideClubsResultsByType(ClubType.MIXED, RoundResultModel.ROUND_TOTAL_COMPARATOR, true));
 	    break;
 	case 3:
-	    model.fillWithPlayer(providePlayerResultsByGender(Gender.MALE,
-		    RoundResultModel.ROUND_TOTAL_COMPARATOR, true));
+	    model.fillWithPlayer(providePlayerResultsByGender(Gender.MALE, RoundResultModel.ROUND_TOTAL_COMPARATOR,
+		    true));
 	    break;
 	case 4:
-	    model.fillWithPlayer(providePlayerResultsByGender(Gender.FEMALE,
-		    RoundResultModel.ROUND_TOTAL_COMPARATOR, true));
+	    model.fillWithPlayer(providePlayerResultsByGender(Gender.FEMALE, RoundResultModel.ROUND_TOTAL_COMPARATOR,
+		    true));
 	    break;
 	case 5:
 	    model.fillWithChecker(provideCheckerResultsByGender(Gender.MALE));
@@ -196,8 +185,7 @@ public class ResultService {
 	    model.fillWithChecker(provideCheckerResultsByGender(Gender.FEMALE));
 	    break;
 	default:
-	    model.fillWithClubs(provideClubsResultsByType(ClubType.MALE,
-		    RoundResultModel.ROUND_TOTAL_COMPARATOR, true));
+	    model.fillWithClubs(provideClubsResultsByType(ClubType.MALE, RoundResultModel.ROUND_TOTAL_COMPARATOR, true));
 	    break;
 	}
 	return model;
