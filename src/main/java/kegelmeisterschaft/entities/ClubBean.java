@@ -22,8 +22,10 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 @Entity(name = "ClubBean")
-@NamedQueries({ @NamedQuery(name = ClubBean.FIND_BY_NAME, query = "SELECT c FROM ClubBean c WHERE c.name = ?"),
+@NamedQueries({
+	@NamedQuery(name = ClubBean.FIND_BY_NAME, query = "SELECT c FROM ClubBean c WHERE c.name = ?"),
 	@NamedQuery(name = ClubBean.FIND_BY_TYPE, query = "SELECT c FROM ClubBean c WHERE c.type = ?"), //
+	@NamedQuery(name = ClubBean.FIND_BY_TYPE_AND_YEAR, query = "SELECT c FROM ClubBean c WHERE c.type = ? and c.year = ?"), //
 	@NamedQuery(name = ClubBean.FIND_BY_YEAR, query = "SELECT c FROM ClubBean c WHERE c.year = ?"),//
 })
 @Table(name = "club")
@@ -31,6 +33,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 public class ClubBean {
     public static final String FIND_BY_NAME = "findClubByName";
     public static final String FIND_BY_TYPE = "findClubByType";
+    public static final String FIND_BY_TYPE_AND_YEAR = "findClubByTypeAndYear";
     public static final String FIND_BY_YEAR = "findClubsByYear";
 
     public enum ClubType {

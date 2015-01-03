@@ -25,8 +25,7 @@ public class ClubDetailResultModel extends ClubResultModel {
     private String type = "";
 
     public ClubDetailResultModel(ClubBean club, List<ResultBean> clubResults,
-	    Map<PlayerBean, List<ResultBean>> playerResults,
-	    List<EventBean> events, List<EventBean> checkerEvents) {
+	    Map<PlayerBean, List<ResultBean>> playerResults, List<EventBean> events, List<EventBean> checkerEvents) {
 	super(club, clubResults);
 
 	if (ClubType.MALE == club.getType())
@@ -36,8 +35,7 @@ public class ClubDetailResultModel extends ClubResultModel {
 	else
 	    type = "gemischter Club";
 
-	for (Entry<PlayerBean, List<ResultBean>> entry : playerResults
-		.entrySet()) {
+	for (Entry<PlayerBean, List<ResultBean>> entry : playerResults.entrySet()) {
 	    // Marker ob der Club, nicht Club-relevante Ergebnisse enthält
 	    if (!hasNotClubRelevant) {
 		for (ResultBean result : entry.getValue()) {
@@ -49,19 +47,18 @@ public class ClubDetailResultModel extends ClubResultModel {
 	    }
 	    PlayerBean player = entry.getKey();
 
-	    results.add(new PlayerResultModel(player, entry.getValue(),
-		    topResults, club.equals(player.getSingleLeagueClub())));
+	    results.add(new PlayerResultModel(player, entry.getValue(), topResults, club.equals(player
+		    .getSingleLeagueClub())));
 	}
 
-	Collections.sort(results, RoundResultModel.ROUND_TOTAL_COMPARATOR);
+	Collections.sort(results, PlayerResultModel.PLAYER_ROUND_TOTAL_COMPARATOR);
 	Collections.reverse(results);
 
 	for (EventBean event : events)
 	    this.events.add(new EventModel(event));
 	Collections.sort(this.events, EventModel.EVENT_MODEL_COMPARATOR);
 
-	this.checkerEvents = EventUtil.summarizeEvents(checkerEvents, false,
-		club);
+	this.checkerEvents = EventUtil.summarizeEvents(checkerEvents, false, club);
     }
 
     public List<PlayerResultModel> getPlayerResults() {

@@ -22,7 +22,9 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 @Entity(name = "PlayerBean")
 @NamedQueries({
 	@NamedQuery(name = PlayerBean.FIND_BY_GENDER, query = "SELECT p FROM PlayerBean p WHERE p.gender = ?"),
+	@NamedQuery(name = PlayerBean.FIND_BY_GENDER_AND_YEAR, query = "SELECT p FROM PlayerBean p WHERE p.gender = ? AND p.year = ?"),
 	@NamedQuery(name = PlayerBean.FIND_BY_CLUB, query = "SELECT p FROM PlayerBean p INNER JOIN p.clubs c WHERE c.name = ?"),
+	@NamedQuery(name = PlayerBean.FIND_BY_CLUB_AND_YEAR, query = "SELECT p FROM PlayerBean p INNER JOIN p.clubs c WHERE c.name = ? and p.year = ?"),
 	@NamedQuery(name = PlayerBean.FIND_BY_NAME, query = "SELECT p FROM PlayerBean p WHERE p.firstName = ? AND p.lastName = ?"),
 	@NamedQuery(name = PlayerBean.FIND_BY_NAME_AND_YEAR, query = "SELECT p FROM PlayerBean p WHERE p.firstName = ? AND p.lastName = ? and p.year = ?"), })
 @Table(name = "player")
@@ -30,9 +32,11 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 public class PlayerBean {
 
     public static final String FIND_BY_GENDER = "findPlayerByGender";
+    public static final String FIND_BY_GENDER_AND_YEAR = "findPlayerByGenderAndYear";
     public static final String FIND_BY_NAME = "findPlayerByName";
     public static final String FIND_BY_NAME_AND_YEAR = "findPlayerByNameAndYear";
     public static final String FIND_BY_CLUB = "findPlayerByClub";
+    public static final String FIND_BY_CLUB_AND_YEAR = "findPlayerByClubAndYear";
 
     public enum Gender {
 	MALE, FEMALE;

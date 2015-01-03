@@ -20,6 +20,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 @Entity(name = "EventBean")
 @NamedQueries({
+	@NamedQuery(name = EventBean.FIND_BY_YEAR, query = "SELECT e FROM EventBean e WHERE e.year = ?"),
 	@NamedQuery(name = EventBean.FIND_BY_CLUB, query = "SELECT e FROM EventBean e WHERE club = ?"),
 	@NamedQuery(name = EventBean.FIND_BY_CHECKER_CLUB, query = "SELECT e FROM EventBean e WHERE checker1Club = ? or checker2Club = ?"),
 	@NamedQuery(name = EventBean.FIND_BY_CLUB_AND_ROUND, query = "SELECT e FROM EventBean e WHERE club = ? AND round = ?"), })
@@ -27,6 +28,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class EventBean {
 
+    public static final String FIND_BY_YEAR = "findEventsByYear";
     public static final String FIND_BY_CLUB = "findEventsByClub";
     public static final String FIND_BY_CHECKER_CLUB = "findEventsByCheckerClub";
     public static final String FIND_BY_CLUB_AND_ROUND = "findEventsByClubAndRound";

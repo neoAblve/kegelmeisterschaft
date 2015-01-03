@@ -68,26 +68,26 @@
 		    		</ul>
 		    	</li>
 		    	 -->
-		    	<li style="width: 40px;"><a href="/ksm/clubs/herren">Clubs</a>
+		    	<li style="width: 40px;"><a href="/ksm/2015/clubs/herren">Clubs</a>
 		    		<ul>
-		    			<li style="width: 90px; margin-top: 3px;" class="sub"><a href="/ksm/clubs/herren">&#62; Herren</a></li>
-		    			<li style="width: 90px;" class="sub"><a href="/ksm/clubs/damen">&#62; Damen</a></li>
-		    			<li style="width: 90px;" class="sub"><a href="/ksm/clubs/mixed">&#62; Mixed</a></li>
+		    			<li style="width: 90px; margin-top: 3px;" class="sub"><a href="/ksm/2015/clubs/herren">&#62; Herren</a></li>
+		    			<li style="width: 90px;" class="sub"><a href="/ksm/2015/clubs/damen">&#62; Damen</a></li>
+		    			<li style="width: 90px;" class="sub"><a href="/ksm/2015/clubs/mixed">&#62; Mixed</a></li>
 		    		</ul>
 		    	</li>
-		    	<li style="width: 40px;"><a href="/ksm/einzel/herren">Einzel</a>
+		    	<li style="width: 40px;"><a href="/ksm/2015/einzel/herren">Einzel</a>
 		    		<ul>
-		    			<li style="width: 90px; margin-top: 3px;" class="sub"><a href="/ksm/einzel/herren">&#62; Herren</a></li>
-		    			<li style="width: 90px;" class="sub"><a href="/ksm/einzel/damen">&#62; Damen</a></li>
+		    			<li style="width: 90px; margin-top: 3px;" class="sub"><a href="/ksm/2015/einzel/herren">&#62; Herren</a></li>
+		    			<li style="width: 90px;" class="sub"><a href="/ksm/2015/einzel/damen">&#62; Damen</a></li>
 		    		</ul>
 		    	</li>
-		    	<li style="width: 80px;"><a href="/ksm/aufschreiber/herren">Aufschreiber</a>
+		    	<li style="width: 80px;"><a href="/ksm/2015/aufschreiber/herren">Aufschreiber</a>
 		    		<ul>
-		    			<li class="sub" style="width: 90px; margin-top: 3px;"><a href="/ksm/aufschreiber/herren">&#62; Herren</a></li>
-		    			<li class="sub" style="width: 90px;"><a href="/ksm/aufschreiber/damen">&#62; Damen</a></li>
+		    			<li class="sub" style="width: 90px; margin-top: 3px;"><a href="/ksm/2015/aufschreiber/herren">&#62; Herren</a></li>
+		    			<li class="sub" style="width: 90px;"><a href="/ksm/2015/aufschreiber/damen">&#62; Damen</a></li>
 		    		</ul>
 		    	</li>
-		    	<li><a href="/ksm/termine">Termine</a></li>
+		    	<li><a href="/ksm/2015/termine">Termine</a></li>
 		    	<li><a href="/ksm/2014/kinder">Spezialkegeln</a>
 		    		<ul>
 		    			<li class="sub" style="width: 130px; margin-top: 3px;"><a href="/ksm/2014/kinder">&#62; Kinderkegeln</a></li>

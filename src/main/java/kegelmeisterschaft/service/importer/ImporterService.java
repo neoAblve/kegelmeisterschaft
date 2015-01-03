@@ -30,7 +30,7 @@ public class ImporterService {
     @SuppressWarnings("serial")
     private static final Map<String, Importer> YEARS = new TreeMap<String, Importer>() {
 	{
-	    // put("2014", new CSVImporter());
+	    put("2014", new CSVImporter());
 	    put("2015", new XLSXImporter());
 	}
     };
@@ -127,10 +127,12 @@ public class ImporterService {
     private static class PlayerKey {
 	private String first;
 	private String last;
+	private String year;
 
-	public PlayerKey(String first, String last) {
+	public PlayerKey(String first, String last, String year) {
 	    this.first = first;
 	    this.last = last;
+	    this.year = year;
 	}
 
 	@Override
@@ -139,6 +141,7 @@ public class ImporterService {
 	    int result = 1;
 	    result = prime * result + ((first == null) ? 0 : first.hashCode());
 	    result = prime * result + ((last == null) ? 0 : last.hashCode());
+	    result = prime * result + ((year == null) ? 0 : year.hashCode());
 	    return result;
 	}
 
@@ -161,12 +164,17 @@ public class ImporterService {
 		    return false;
 	    } else if (!last.equals(other.last))
 		return false;
+	    if (year == null) {
+		if (other.year != null)
+		    return false;
+	    } else if (!year.equals(other.year))
+		return false;
 	    return true;
 	}
 
 	@Override
 	public String toString() {
-	    return "Player [" + first + ", " + last + "]";
+	    return "Player [" + first + ", " + last + ", " + year + "]";
 	}
 
     }
@@ -180,7 +188,7 @@ public class ImporterService {
 	    System.out.println("\tworking on Club: " + club.getName());
 	    List<PlayerBean> players = YEARS.get(year).getPlayerByClub(club);
 	    for (PlayerBean player : players) {
-		PlayerKey playerKey = new PlayerKey(player.getFirstName(), player.getLastName());
+		PlayerKey playerKey = new PlayerKey(player.getFirstName(), player.getLastName(), year);
 		System.out.println("\t\tworking on " + playerKey);
 
 		HashSet<ClubBean> playerClubs = playerClubMap.get(playerKey);

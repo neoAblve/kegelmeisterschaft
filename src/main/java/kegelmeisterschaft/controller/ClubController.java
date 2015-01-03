@@ -22,32 +22,29 @@ public class ClubController {
     @Autowired
     private ResultService resultService;
 
-    @RequestMapping(method = RequestMethod.GET, value = "/clubs/herren")
-    public ModelAndView showMenClubs(
+    @RequestMapping(method = RequestMethod.GET, value = "/{year}/clubs/herren")
+    public ModelAndView showMenClubs(@PathVariable("year") String year,
 	    @RequestParam(value = "column", defaultValue = "") final String column,
 	    @RequestParam(value = "order", defaultValue = "desc") final String order) {
-	return createModel(ClubType.MALE, "Herren", "/ksm/clubs/herren",
-		column, order);
+	return createModel(ClubType.MALE, "Herren", "/ksm/clubs/herren", column, order, year);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/clubs/damen")
-    public ModelAndView showWomen(
+    @RequestMapping(method = RequestMethod.GET, value = "/{year}/clubs/damen")
+    public ModelAndView showWomen(@PathVariable("year") String year,
 	    @RequestParam(value = "column", defaultValue = "") final String column,
 	    @RequestParam(value = "order", defaultValue = "desc") final String order) {
-	return createModel(ClubType.FEMALE, "Damen", "/ksm/clubs/damen",
-		column, order);
+	return createModel(ClubType.FEMALE, "Damen", "/ksm/clubs/damen", column, order, year);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/clubs/mixed")
-    public ModelAndView showMixed(
+    @RequestMapping(method = RequestMethod.GET, value = "/{year}/clubs/mixed")
+    public ModelAndView showMixed(@PathVariable("year") String year,
 	    @RequestParam(value = "column", defaultValue = "") final String column,
 	    @RequestParam(value = "order", defaultValue = "desc") final String order) {
-	return createModel(ClubType.MIXED, "Gemischte Clubs",
-		"/ksm/clubs/mixed", column, order);
+	return createModel(ClubType.MIXED, "Gemischte Clubs", "/ksm/clubs/mixed", column, order, year);
     }
 
-    private ModelAndView createModel(ClubType type, String descr,
-	    String rootURL, String column, String order) {
+    private ModelAndView createModel(ClubType type, String descr, String rootURL, String column, String order,
+	    String year) {
 	if (column == null)
 	    column = "";
 	Comparator<RoundResultModel> comp = RoundResultModel.ORDERS.get(column);
@@ -64,8 +61,7 @@ public class ClubController {
 	mv.addObject("rootURL", rootURL);
 	mv.addObject("column", column);
 	mv.addObject("order", desc ? "asc" : "desc");
-	mv.addObject("results",
-		resultService.provideClubsResultsByType(type, comp, desc));
+	mv.addObject("results", resultService.provideClubsResultsByTypeAndYear(type, comp, desc, year));
 	return mv;
     }
 

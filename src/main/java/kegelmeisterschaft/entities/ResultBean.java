@@ -20,7 +20,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 @Entity(name = "ResultBean")
 @NamedQueries({
 	@NamedQuery(name = ResultBean.FIND_BY_CLUB, query = "SELECT r FROM ResultBean r WHERE r.club = ?"),
-	@NamedQuery(name = ResultBean.FIND_CHECKER_RESULTS_BY_GENDER, query = "SELECT r FROM ResultBean r INNER JOIN r.player p WHERE r.checker = true AND p.gender = ?"),
+	@NamedQuery(name = ResultBean.FIND_CHECKER_RESULTS_BY_GENDER_AND_YEAR, query = "SELECT r FROM ResultBean r INNER JOIN r.player p WHERE r.checker = true AND p.gender = ? AND r.year = ?"),
 	@NamedQuery(name = ResultBean.FIND_BY_PLAYER, query = "SELECT r FROM ResultBean r INNER JOIN r.player WHERE r.checker = false AND r.singleRelevant = true AND r.player = ? AND r.player.singleLeagueClub.id = r.club.id"),
 	@NamedQuery(name = ResultBean.FIND_BY_PLAYER_ALL, query = "SELECT r FROM ResultBean r INNER JOIN r.player WHERE r.player = ? ORDER BY r.club, r.round"),
 	@NamedQuery(name = ResultBean.FIND_BY_PLAYER_AND_CLUB, query = "SELECT r FROM ResultBean r WHERE r.player = ? AND r.club = ? AND r.checker = false "), })
@@ -32,7 +32,7 @@ public class ResultBean {
     public static final String FIND_BY_PLAYER = "findByPlayer";
     public static final String FIND_BY_PLAYER_ALL = "findByPlayerAll";
     public static final String FIND_BY_PLAYER_AND_CLUB = "findByPlayerAndClub";
-    public static final String FIND_CHECKER_RESULTS_BY_GENDER = "findCheckerResultsByGender";
+    public static final String FIND_CHECKER_RESULTS_BY_GENDER_AND_YEAR = "findCheckerResultsByGenderAndYear";
 
     public static final Comparator<ResultBean> SCORE_COMPARATOR = new Comparator<ResultBean>() {
 	@Override

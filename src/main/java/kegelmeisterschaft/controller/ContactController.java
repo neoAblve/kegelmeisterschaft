@@ -25,24 +25,21 @@ public class ContactController {
     private ResultService resultService;
 
     @RequestMapping(value = "/kontakt/senden", method = RequestMethod.POST)
-    public ModelAndView addContact(
-	    @Valid @ModelAttribute("contact") ContactModel contact,
-	    BindingResult result) {
+    public ModelAndView addContact(@Valid @ModelAttribute("contact") ContactModel contact, BindingResult result) {
 	ModelAndView mv = new ModelAndView("contact", "contact", contact);
 	mv.addObject("headTop", resultService.getNextHeadModel());
 	if (result.hasErrors()) {
 	    mv.addObject("status", false);
-	    mv.addObject("resultMessage", "Bitte prüfe deine Eingabe.");
+	    mv.addObject("resultMessage", "Bitte überprüfe deine Eingabe.");
 	} else {
 	    boolean successfull = mailerService.sendInfoMail(contact);
 	    if (successfull) {
 		mv = new ModelAndView("contact", "contact", new ContactModel());
-		mv.addObject(
-			"resultMessage",
+		mv.addObject("resultMessage",
 			"Deine Nachricht wurde verschickt. Wir versuchen so schnell wie möglich zu antworten. Vielen Dank für deine Anfrage!");
 	    } else {
 		mv.addObject("resultMessage",
-			"Es kam zu einem technischem Fehler, bitte versuche es später erneut.");
+			"Es kam zu einem technischem Fehler. Bitte versuche es später erneut, oder schrei eine Email an info@ksm-balve.de");
 	    }
 	    mv.addObject("status", successfull);
 	}

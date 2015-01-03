@@ -40,6 +40,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class ResultService {
 
+    private static final String CURRENT_YEAR = "2015";
+
     @Autowired
     private ClubHome clubHome;
     @Autowired
@@ -49,10 +51,10 @@ public class ResultService {
     @Autowired
     private ResultHome resultHome;
 
-    public List<ClubResultModel> provideClubsResultsByType(ClubType type, Comparator<RoundResultModel> comp,
-	    boolean desc) {
+    public List<ClubResultModel> provideClubsResultsByTypeAndYear(ClubType type, Comparator<RoundResultModel> comp,
+	    boolean desc, String year) {
 	List<ClubResultModel> results = new ArrayList<ClubResultModel>();
-	for (ClubBean club : clubHome.listByNamedQuery(ClubBean.FIND_BY_TYPE, type))
+	for (ClubBean club : clubHome.listByNamedQuery(ClubBean.FIND_BY_TYPE_AND_YEAR, type, year))
 	    results.add(new ClubResultModel(club, resultHome.listByNamedQuery(ResultBean.FIND_BY_CLUB, club)));
 
 	if (comp != null)
@@ -70,7 +72,8 @@ public class ResultService {
 	if (club == null)
 	    return null;
 	Map<PlayerBean, List<ResultBean>> playerResults = new HashMap<PlayerBean, List<ResultBean>>();
-	for (PlayerBean player : playerHome.listByNamedQuery(PlayerBean.FIND_BY_CLUB, club.getName()))
+	for (PlayerBean player : playerHome.listByNamedQuery(PlayerBean.FIND_BY_CLUB_AND_YEAR, club.getName(),
+		club.getYear()))
 	    playerResults.put(player, resultHome.listByNamedQuery(ResultBean.FIND_BY_PLAYER_AND_CLUB, player, club));
 
 	return new ClubDetailResultModel(club, resultHome.listByNamedQuery(ResultBean.FIND_BY_CLUB, club),
@@ -95,10 +98,11 @@ public class ResultService {
 	return new PlayerDetailModel(player, results, events);
     }
 
-    public List<PlayerResultModel> providePlayerResultsByGender(Gender gender, Comparator<RoundResultModel> comp,
-	    boolean desc) {
+    public List<PlayerResultModel> providePlayerResultsByGenderAndYear(Gender gender,
+	    Comparator<RoundResultModel> comp, boolean desc, String year) {
 	List<PlayerResultModel> results = new ArrayList<PlayerResultModel>();
-	List<PlayerBean> players = playerHome.listByNamedQuery(PlayerBean.FIND_BY_GENDER, gender.toString());
+	List<PlayerBean> players = playerHome.listByNamedQuery(PlayerBean.FIND_BY_GENDER_AND_YEAR, gender.toString(),
+		year);
 	for (PlayerBean player : players) {
 	    if (player.getSingleLeagueClub() == null)
 		continue;
@@ -118,10 +122,10 @@ public class ResultService {
 	return results;
     }
 
-    public List<CheckerResultModel> provideCheckerResultsByGender(Gender gender) {
+    public List<CheckerResultModel> provideCheckerResultsByGenderAndYear(Gender gender, String year) {
 	Map<PlayerBean, Set<ResultBean>> checkerResultMap = new HashMap<PlayerBean, Set<ResultBean>>();
-	for (ResultBean result : resultHome.listByNamedQuery(ResultBean.FIND_CHECKER_RESULTS_BY_GENDER,
-		gender.toString())) {
+	for (ResultBean result : resultHome.listByNamedQuery(ResultBean.FIND_CHECKER_RESULTS_BY_GENDER_AND_YEAR,
+		gender.toString(), year)) {
 	    Set<ResultBean> checkerResult = checkerResultMap.get(result.getPlayer());
 	    if (checkerResult == null) {
 		checkerResult = new TreeSet<ResultBean>(ResultBean.SCORE_COMPARATOR);
@@ -143,8 +147,8 @@ public class ResultService {
 	return results;
     }
 
-    public ArrayList<EventModel> provideEvents() {
-	return EventUtil.summarizeEvents(eventHome.listAll(), true);
+    public ArrayList<EventModel> provideEvents(String year) {
+	return EventUtil.summarizeEvents(eventHome.listByNamedQuery(EventBean.FIND_BY_YEAR, year), true);
     }
 
     private HashMap<Integer, HeadTopModel> headModelCache = new HashMap<Integer, HeadTopModel>();
@@ -164,28 +168,30 @@ public class ResultService {
 	HeadTopModel model = new HeadTopModel(type);
 	switch (type) {
 	case 1:
-	    model.fillWithClubs(provideClubsResultsByType(ClubType.FEMALE, RoundResultModel.ROUND_TOTAL_COMPARATOR,
-		    true));
+	    model.fillWithClubs(provideClubsResultsByTypeAndYear(ClubType.FEMALE,
+		    RoundResultModel.ROUND_TOTAL_COMPARATOR, true, CURRENT_YEAR));
 	    break;
 	case 2:
-	    model.fillWithClubs(provideClubsResultsByType(ClubType.MIXED, RoundResultModel.ROUND_TOTAL_COMPARATOR, true));
+	    model.fillWithClubs(provideClubsResultsByTypeAndYear(ClubType.MIXED,
+		    RoundResultModel.ROUND_TOTAL_COMPARATOR, true, CURRENT_YEAR));
 	    break;
 	case 3:
-	    model.fillWithPlayer(providePlayerResultsByGender(Gender.MALE, RoundResultModel.ROUND_TOTAL_COMPARATOR,
-		    true));
+	    model.fillWithPlayer(providePlayerResultsByGenderAndYear(Gender.MALE,
+		    RoundResultModel.ROUND_TOTAL_COMPARATOR, true, CURRENT_YEAR));
 	    break;
 	case 4:
-	    model.fillWithPlayer(providePlayerResultsByGender(Gender.FEMALE, RoundResultModel.ROUND_TOTAL_COMPARATOR,
-		    true));
+	    model.fillWithPlayer(providePlayerResultsByGenderAndYear(Gender.FEMALE,
+		    RoundResultModel.ROUND_TOTAL_COMPARATOR, true, CURRENT_YEAR));
 	    break;
 	case 5:
-	    model.fillWithChecker(provideCheckerResultsByGender(Gender.MALE));
+	    model.fillWithChecker(provideCheckerResultsByGenderAndYear(Gender.MALE, CURRENT_YEAR));
 	    break;
 	case 6:
-	    model.fillWithChecker(provideCheckerResultsByGender(Gender.FEMALE));
+	    model.fillWithChecker(provideCheckerResultsByGenderAndYear(Gender.FEMALE, CURRENT_YEAR));
 	    break;
 	default:
-	    model.fillWithClubs(provideClubsResultsByType(ClubType.MALE, RoundResultModel.ROUND_TOTAL_COMPARATOR, true));
+	    model.fillWithClubs(provideClubsResultsByTypeAndYear(ClubType.MALE,
+		    RoundResultModel.ROUND_TOTAL_COMPARATOR, true, CURRENT_YEAR));
 	    break;
 	}
 	return model;
