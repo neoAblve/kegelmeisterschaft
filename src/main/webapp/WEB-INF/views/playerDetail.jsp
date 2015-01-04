@@ -6,7 +6,7 @@
 <t:layout>
     <jsp:attribute name="wide">true</jsp:attribute>
     <jsp:body>
-    	<h1>Keglerübersicht - ${model.player.firstName} ${model.player.lastName} </h1>
+    	<h1>Keglerübersicht - ${model.player.firstName} ${model.player.lastName} - ${model.player.year}</h1>
 		<div class="space"></div>
 
 		<c:if test="${model.hasSingle}">

@@ -3,6 +3,7 @@ package kegelmeisterschaft.controller;
 import java.util.Comparator;
 
 import kegelmeisterschaft.entities.ClubBean.ClubType;
+import kegelmeisterschaft.model.ConfigModelUtil;
 import kegelmeisterschaft.model.result.RoundResultModel;
 import kegelmeisterschaft.service.result.ResultService;
 
@@ -57,6 +58,9 @@ public class ClubController {
 
 	ModelAndView mv = new ModelAndView("clubOverview");
 	mv.addObject("type", descr);
+	mv.addObject("typeLower", type.name().toLowerCase());
+	mv.addObject("year", year);
+	mv.addObject("otherYear", ConfigModelUtil.getOtherYear(year));
 	mv.addObject("headTop", resultService.getNextHeadModel());
 	mv.addObject("rootURL", rootURL);
 	mv.addObject("column", column);

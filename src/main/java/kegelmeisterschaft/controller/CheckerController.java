@@ -1,6 +1,7 @@
 package kegelmeisterschaft.controller;
 
 import kegelmeisterschaft.entities.PlayerBean.Gender;
+import kegelmeisterschaft.model.ConfigModelUtil;
 import kegelmeisterschaft.service.result.ResultService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,9 @@ public class CheckerController {
     private ModelAndView getCheckerResults(String title, Gender gender, String year) {
 	ModelAndView mv = new ModelAndView("checkerOverview");
 	mv.addObject("type", title);
+	mv.addObject("typeLower", title.toLowerCase());
+	mv.addObject("year", year);
+	mv.addObject("otherYear", ConfigModelUtil.getOtherYear(year));
 	mv.addObject("headTop", resultService.getNextHeadModel());
 	mv.addObject("data", resultService.provideCheckerResultsByGenderAndYear(gender, year));
 	return mv;

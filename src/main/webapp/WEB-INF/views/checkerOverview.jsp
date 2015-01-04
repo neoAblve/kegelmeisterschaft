@@ -5,7 +5,7 @@
 <t:layout>
 	<jsp:attribute name="wide">true</jsp:attribute>
     <jsp:body>
-    	<h1>Aufschreiberwertung - ${type}</h1>
+    	<h1>Aufschreiberwertung - ${type} - ${year}<span class="otherYear"><a href="/ksm/${otherYear}/aufschreiber/${typeLower}">zur Wertung von ${otherYear}</a></span></h1>
     	<div class="space"></div>
     	<table class="data">
     		<thead class="head">

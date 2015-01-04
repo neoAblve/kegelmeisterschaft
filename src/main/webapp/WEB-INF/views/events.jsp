@@ -5,7 +5,7 @@
 <t:layout>
 	<jsp:attribute name="wide">true</jsp:attribute>
     <jsp:body>
-    	<h1>Übersicht über die Kegeltermine</h1>
+    	<h1>Übersicht über die Kegeltermine - ${year}<span class="otherYear"><a href="/ksm/${otherYear}/termine">zu den Terminen von ${otherYear}</a></span></h1>
     	<div class="space"></div>
     	<table class="data">
     		<thead class="head">

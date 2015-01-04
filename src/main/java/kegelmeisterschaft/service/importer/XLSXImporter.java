@@ -83,7 +83,7 @@ public class XLSXImporter implements Importer {
 	    return results;
 	} catch (Exception e) {
 	    System.out.println("Keine Results für " + club.getName() + "gefunden");
-	    e.printStackTrace();
+	    // e.printStackTrace();
 	    return new ArrayList<ResultBean>();
 	}
     }

@@ -4,7 +4,7 @@
 <t:layout>
 	<jsp:attribute name="wide">true</jsp:attribute>
     <jsp:body>
-    	<h1>Tandemmeisterschaft</h1>
+    	<h1>Tandemmeisterschaft 2014</h1>
 		<p>Neben dem Kinderkegeln haben wir versucht, mit der Einführung eines neuen Wettbewerbs, etwas für Abwechslung zu sorgen.
 		Dabei haben zwei Kegler als Team auf zwei parallelen Bahen jeweils 10 Wurf in die Vollen (5 pro Bahn) absolviert.
 		Gekeglt wurde in drei Wertungen: Damen, Herren und Mixed <br />

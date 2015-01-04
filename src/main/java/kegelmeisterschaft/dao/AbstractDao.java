@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Table;
 
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.ObjectNotFoundException;
@@ -20,15 +21,18 @@ public abstract class AbstractDao<T> {
     protected final Class<T> entityClass;
     protected final String entityName;
     protected String entityAlias;
+    protected String tableName;
 
     @SuppressWarnings("unchecked")
     public AbstractDao() {
-	ParameterizedType type = (ParameterizedType) getClass()
-		.getGenericSuperclass();
+	ParameterizedType type = (ParameterizedType) getClass().getGenericSuperclass();
 	entityClass = (Class<T>) type.getActualTypeArguments()[0];
 
 	Entity entity = entityClass.getAnnotation(Entity.class);
 	entityName = entity != null ? entity.name() : entityClass.getName();
+
+	Table table = entityClass.getAnnotation(Table.class);
+	tableName = table != null ? table.name() : entityClass.getName();
 
 	entityAlias = String.valueOf(entityName.charAt(0)).toLowerCase();
     }
@@ -69,8 +73,7 @@ public abstract class AbstractDao<T> {
     }
 
     public List<T> listAll() {
-	return listByQuery("SELECT " + entityAlias + " FROM " + entityName
-		+ " " + entityAlias);
+	return listByQuery("SELECT " + entityAlias + " FROM " + entityName + " " + entityAlias);
     }
 
     @SuppressWarnings("unchecked")
@@ -86,34 +89,23 @@ public abstract class AbstractDao<T> {
     private T findExactlyOne(List<T> list) throws ObjectNotFoundException {
 	switch (list.size()) {
 	case 0:
-	    throw new ObjectNotFoundException(entityName,
-		    entityClass.toString());
+	    throw new ObjectNotFoundException(entityName, entityClass.toString());
 	case 1:
 	    return list.get(0);
 	default:
-	    throw new ObjectNotFoundException(entityName, "More than one "
-		    + entityName + " found!");
+	    throw new ObjectNotFoundException(entityName, "More than one " + entityName + " found!");
 	}
     }
 
-    public T findExactlyOneByNamedQuery(String query, Object... args)
-	    throws ObjectNotFoundException {
+    public T findExactlyOneByNamedQuery(String query, Object... args) throws ObjectNotFoundException {
 	return findExactlyOne(listByNamedQuery(query, args));
     }
 
     private Query createQuery(String query, Object... args) {
 	if (!query.toUpperCase().startsWith("SELECT"))
-	    query = "SELECT "
-		    + (query.contains("IN(") ? "DISTINCT " : "")
-		    + entityAlias
-		    + " FROM "
-		    + entityName
-		    + " "
-		    + entityAlias
-		    + " "
-		    + (StringUtils.isEmpty(query)
-			    || query.toUpperCase().contains("WHERE") ? ""
-			    : "WHERE ") + query;
+	    query = "SELECT " + (query.contains("IN(") ? "DISTINCT " : "") + entityAlias + " FROM " + entityName + " "
+		    + entityAlias + " "
+		    + (StringUtils.isEmpty(query) || query.toUpperCase().contains("WHERE") ? "" : "WHERE ") + query;
 	Query q = getSession().createQuery(query);
 	if (args != null) {
 	    int i = 0;
@@ -147,6 +139,10 @@ public abstract class AbstractDao<T> {
      */
     public void flush() {
 	getSession().flush();
+    }
+
+    public void resetId() {
+	getSession().createSQLQuery("ALTER TABLE " + tableName + " AUTO_INCREMENT = 1").executeUpdate();
     }
 
 }

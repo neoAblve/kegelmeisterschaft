@@ -23,23 +23,16 @@ public class MailerService {
 
     public boolean sendInfoMail(ContactModel contact) {
 	try {
+	    // web.de
+	    final String username = "mathis.schweitzer@web.de";
+	    final String password = "p7zVKZJP";
+
 	    Properties props = System.getProperties();
-	    // Gmail
-	    final String username = "mathis.schweitzer";
-	    final String password = "p7zVKZJP1";
-	    props.put("mail.smtp.host", "smtp.gmail.com");
+	    props.put("mail.smtp.host", "smtp.web.de");
 	    props.put("mail.smtp.port", "587");
+	    props.put("mail.transport.protocol", "smtp");
 	    props.put("mail.smtp.auth", "true");
 	    props.put("mail.smtp.starttls.enable", "true");
-
-	    // web.de
-	    // final String username = "mathis.schweitzer@web.de";
-	    // final String password = "p7zVKZJP";
-	    // props.put("mail.smtp.host", "smtp.web.de");
-	    // props.put("mail.smtp.port", "587");
-	    // props.put("mail.transport.protocol", "smtp");
-	    // props.put("mail.smtp.auth", "true");
-	    // props.put("mail.smtp.starttls.enable", "true");
 
 	    props.put("mail.smtp.user", username);
 	    props.put("mail.password", password);
@@ -59,30 +52,17 @@ public class MailerService {
 	    msg.addRecipient(Message.RecipientType.TO, new InternetAddress("fragen@ksm-balve.de", "Fragen KSM-Balve"));
 
 	    String sentDate = sdf.format(new Date());
-	    String subject = "Anfrage von " + contact.getName() + " am " + sentDate;
+	    String subject = "Kontaktformular: Anfrage von " + contact.getName() + " am " + sentDate;
 	    msg.setSubject(subject, "UTF-8");
 
 	    String message = "Nachricht von " + contact.getName() + " (" + contact.getEmail() + ") abgeschickt um "
-		    + sentDate + ": " + contact.getMessage();
+		    + sentDate + ":\n" + contact.getMessage();
 	    msg.setContent(message, "text/plain; charset=UTF-8");
-	    System.out.println(subject);
-	    System.out.println(message);
 	    Transport.send(msg);
-	    System.out.println("Sent message successfully....");
 	    return true;
 	} catch (Exception e) {
 	    e.printStackTrace();
 	}
 	return false;
     }
-
-    public static void main(String[] args) {
-	MailerService service = new MailerService();
-	ContactModel model = new ContactModel();
-	model.setEmail("mathis.schweitzer@gmx.de");
-	model.setMessage("das ist eine Testnachricht");
-	model.setName("Birte213123");
-	service.sendInfoMail(model);
-    }
-
 }

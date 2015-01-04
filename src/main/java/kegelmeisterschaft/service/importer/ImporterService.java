@@ -50,9 +50,23 @@ public class ImporterService {
 	eventHome.removeAll();
 	clubHome.removeAll();
 	playerHome.removeAll();
+
+	resultHome.flush();
+	eventHome.flush();
+	clubHome.flush();
+	playerHome.flush();
 	System.out.println("Clearing done.");
 
-	// TODO reset BaseSequences
+	// reset BaseSequences
+	resultHome.resetId();
+	eventHome.resetId();
+	clubHome.resetId();
+	playerHome.resetId();
+
+	resultHome.flush();
+	eventHome.flush();
+	clubHome.flush();
+	playerHome.flush();
 
 	for (String year : YEARS.keySet()) {
 	    System.out.println(year);

@@ -6,7 +6,7 @@
 <t:layout>
     <jsp:attribute name="wide">true</jsp:attribute>
     <jsp:body>
-    	<h1>Übersicht - ${model.club.name} - ${model.type}</h1>
+    	<h1>Übersicht - ${model.club.name} - ${model.type} - ${model.club.year}</h1>
 		<div class="space"></div>
 		<table>
 			<tr>

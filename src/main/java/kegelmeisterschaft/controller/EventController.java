@@ -1,5 +1,6 @@
 package kegelmeisterschaft.controller;
 
+import kegelmeisterschaft.model.ConfigModelUtil;
 import kegelmeisterschaft.service.result.ResultService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,8 @@ public class EventController {
     @RequestMapping(method = RequestMethod.GET, value = "/{year}/termine")
     public ModelAndView showMenClubs(@PathVariable("year") String year) {
 	ModelAndView mv = new ModelAndView("events");
+	mv.addObject("year", year);
+	mv.addObject("otherYear", ConfigModelUtil.getOtherYear(year));
 	mv.addObject("headTop", resultService.getNextHeadModel());
 	mv.addObject("data", resultService.provideEvents(year));
 	return mv;
