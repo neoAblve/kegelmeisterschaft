@@ -56,9 +56,13 @@ public class ClubController {
 	if (order != null && StringUtils.equals(order, "asc"))
 	    desc = false;
 
+	String oldType = descr.toLowerCase();
+	if (type == ClubType.MIXED)
+	    oldType = type.name().toLowerCase();
+
 	ModelAndView mv = new ModelAndView("clubOverview");
 	mv.addObject("type", descr);
-	mv.addObject("typeLower", type.name().toLowerCase());
+	mv.addObject("typeLower", oldType);
 	mv.addObject("year", year);
 	mv.addObject("otherYear", ConfigModelUtil.getOtherYear(year));
 	mv.addObject("headTop", resultService.getNextHeadModel());

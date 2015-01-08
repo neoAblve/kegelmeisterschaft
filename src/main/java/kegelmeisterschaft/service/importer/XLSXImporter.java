@@ -24,7 +24,7 @@ public class XLSXImporter implements Importer {
     public List<ResultBean> getResultsByClub(ClubBean club) {
 	try {
 	    Resource resource = new ClassRelativeResourceLoader(Importer.class).getResource(club.getYear()
-		    + "/results/" + club.getName() + ".txt");
+		    + "/results/" + club.getName() + ".xlsx");
 	    XSSFWorkbook workbook = new XSSFWorkbook(resource.getInputStream());
 	    XSSFSheet sheet = workbook.getSheetAt(0);
 
@@ -72,7 +72,7 @@ public class XLSXImporter implements Importer {
 			result.setNinerCount(Double.valueOf(cell.getNumericCellValue()).intValue());
 			break;
 		    case 9:
-			result.setReleased(cell.getStringCellValue());
+			result.setReleased(String.valueOf(cell.getBooleanCellValue()));
 			break;
 		    }
 		}
@@ -82,8 +82,8 @@ public class XLSXImporter implements Importer {
 
 	    return results;
 	} catch (Exception e) {
-	    System.out.println("Keine Results für " + club.getName() + "gefunden");
-	    // e.printStackTrace();
+	    System.out.println("Keine Results für " + club.getName() + " gefunden");
+	    e.printStackTrace();
 	    return new ArrayList<ResultBean>();
 	}
     }
