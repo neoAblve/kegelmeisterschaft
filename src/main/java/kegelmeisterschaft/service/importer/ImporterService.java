@@ -103,6 +103,8 @@ public class ImporterService {
 		    playerDependend = true;
 		}
 
+		// System.out.println(result.getFirstName() + " - " +
+		// result.getLastName());
 		result.setClub(club);
 		PlayerBean player = playerHome.findExactlyOneByNamedQuery(PlayerBean.FIND_BY_NAME_AND_YEAR,
 			result.getFirstName(), result.getLastName(), year);

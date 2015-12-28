@@ -27,14 +27,14 @@ public class PlayerController {
     public ModelAndView showMaleOverview(@PathVariable("year") String year,
 	    @RequestParam(value = "column", defaultValue = "") final String column,
 	    @RequestParam(value = "order", defaultValue = "desc") final String order) {
-	return createModel(Gender.MALE, "Herren", "/ksm/einzel/herren", column, order, year);
+	return createModel(Gender.MALE, "Herren", "/ksm/" + year + "/einzel/herren", column, order, year);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/{year}/einzel/damen")
     public ModelAndView showFemaleOverview(@PathVariable("year") String year,
 	    @RequestParam(value = "column", defaultValue = "") final String column,
 	    @RequestParam(value = "order", defaultValue = "desc") final String order) {
-	return createModel(Gender.FEMALE, "Damen", "/ksm/einzel/damen", column, order, year);
+	return createModel(Gender.FEMALE, "Damen", "/ksm/" + year + "/einzel/damen", column, order, year);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/kegler/{id}")

@@ -5,9 +5,13 @@ import java.util.Date;
 import java.util.Properties;
 
 import javax.mail.Address;
+import javax.mail.Folder;
 import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.NoSuchProviderException;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
+import javax.mail.Store;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -20,12 +24,12 @@ import org.springframework.stereotype.Component;
 public class MailerService {
 
     private static final SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm.ss");
+    private static final String USERNAME = "mathis.schweitzer@web.de";
+    private static final String PASSWORD = "p7zVKZJP";
 
     public boolean sendInfoMail(ContactModel contact) {
 	try {
-	    // web.de
-	    final String username = "mathis.schweitzer@web.de";
-	    final String password = "p7zVKZJP";
+	    doImap();
 
 	    Properties props = System.getProperties();
 	    props.put("mail.smtp.host", "smtp.web.de");
@@ -33,21 +37,19 @@ public class MailerService {
 	    props.put("mail.transport.protocol", "smtp");
 	    props.put("mail.smtp.auth", "true");
 	    props.put("mail.smtp.starttls.enable", "true");
-
-	    props.put("mail.smtp.user", username);
-	    props.put("mail.password", password);
+	    props.put("mail.smtp.user", USERNAME);
+	    props.put("mail.password", PASSWORD);
 
 	    javax.mail.Authenticator auth = new javax.mail.Authenticator() {
 		@Override
 		public PasswordAuthentication getPasswordAuthentication() {
-		    return new PasswordAuthentication(username, password);
+		    return new PasswordAuthentication(USERNAME, PASSWORD);
 		}
 	    };
 
-	    Session session = Session.getDefaultInstance(props, auth);
-
+	    Session session = Session.getInstance(props, auth);
 	    MimeMessage msg = new MimeMessage(session);
-	    msg.setFrom(new InternetAddress(username));
+	    msg.setFrom(new InternetAddress(USERNAME));
 	    msg.setReplyTo(new Address[] { new InternetAddress(contact.getEmail(), contact.getName()) });
 	    msg.addRecipient(Message.RecipientType.TO, new InternetAddress("fragen@ksm-balve.de", "Fragen KSM-Balve"));
 
@@ -64,5 +66,28 @@ public class MailerService {
 	    e.printStackTrace();
 	}
 	return false;
+    }
+
+    private void doImap() {
+	try {
+	    Properties props = new Properties();
+	    props.setProperty("mail.imap.port", "993");
+	    props.setProperty("mail.imap.ssl.enable", "true");
+	    Session session = Session.getDefaultInstance(props, null);
+	    Store store = session.getStore("imaps");
+	    store.connect("imap.web.de", USERNAME, PASSWORD);
+
+	    Folder inbox = store.getFolder("INBOX");
+	    inbox.open(Folder.READ_ONLY);
+
+	    // Message[] messages = inbox.getMessages();
+
+	    inbox.close(false);
+	    store.close();
+	} catch (NoSuchProviderException e) {
+	    e.printStackTrace();
+	} catch (MessagingException e) {
+	    e.printStackTrace();
+	}
     }
 }

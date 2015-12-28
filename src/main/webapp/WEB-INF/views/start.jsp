@@ -8,16 +8,29 @@
 	<jsp:attribute name="rightTeaser">
 		<!-- Start Right Content -->
 	   	<div class="rightcolumn">
-	     	<h1>Update</h1>
-	     	Pünktlich zum Jahreswechsel präsentiert sich auf ksm-balve.de auch der neue Ausrichter "KC After - Nine dfmA".
-	     	Wir freuen uns auf eine aufregende Stadtmeisterschaft.
+	     	<h1>Ergebnis-Update</h1>
+	     	Die Ergebnisse letzten Durchgänge Stadtmeisterschaft sind nun online.<br />
+	     	<br />
+	     	<a href="/ksm/news">&lt;&lt;&lt;Klick&gt;&gt;&gt;</a> 
+	     	<br />
+	     	<br />
+	     	Allen Stadtmeistern wünschen wir "Herzlichen Glückwunsch" und bedanken und gleichzeitig bei allem Keglern.
 	    </div>
+	    <!-- 
+	     -->
 	   	<div class="rightcolumn">
 	     	<h1>Kinder-/Tandemkegeln</h1>
-	     	Wird auch in diesem Jahr ausgetragen. Und zwar am 1. Februar und 1. März von 11:00 Uhr bis 17:00 Uhr 
-	     	im Haus Padberg auf Bahn 1+2.
+	     	Ergebnisse hier:
+	     	<ul>
+	     		<li>
+			     	<a href="/ksm/2015/kinder">Kinderkegeln</a><br />
+	     		</li>
+	     		<li>
+			     	<a href="/ksm/2015/tandem">Tandemkegeln</a>
+	     		</li>
+	     	</ul>
 	   	</div>
-	   	<div class="rightcolumn">
+	   	<div class="rightcolumn" style="margin-bottom: 0px;">
 	     	<h1>Keglerball</h1>
 	     	<img alt="Teaser Keglerball 22.03.2014" src="/images/teaserKeglerball2015.png" />
 	   	</div>
@@ -95,6 +108,7 @@
 		<p>
 			Gut Holz<br />
 			Euer KC After Nine
+			<br />
 		</p>
 		</div>
     </jsp:body>

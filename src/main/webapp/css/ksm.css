@@ -105,6 +105,7 @@ sup {
 	list-style: none;
 	margin-right: 12px;
 	background-color: #2F4537;
+	z-index: 999;
 }
 
 .nav-links li a:link {
@@ -153,6 +154,18 @@ sup {
     margin-top: -30px;	
 }
 /* ------------------------ End Nav Bar -----------------*/
+
+.promo {
+	margin: 8px 0px 8px 16px;
+	padding: 7px;
+	width: 908px;
+	font-size: 13px;
+	font-weight: bolder;
+	border: 1px solid #AEAEAE;
+	background-color: #b80816;
+	z-index: -1;
+}
+
 
 /* ------------------------ Start outer content -----------------*/
 #outercontent {

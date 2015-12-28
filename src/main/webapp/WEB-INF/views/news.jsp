@@ -5,6 +5,242 @@
 	<jsp:attribute name="wide">true</jsp:attribute>
     <jsp:body>
     	<h1>Neuigkeiten rund um die Kegelstadtmeisterschaft</h1>
+    	
+    	<div class="news">
+	     	<h1>Ergebnis-Upload am 22. März</h1>
+	     	Im Upload enthalten sind die letzten Wertungsdurchgänge aus 2015:
+	     	<ul>
+	     		<li><a href="/ksm/club/99">Gipfelstürmer</a>: 4. Durchgang</li>
+	     		<li><a href="/ksm/club/88">Kommt nix bei rum</a>: 4. Durchgang</li>
+	     		<li><a href="/ksm/club/79">Die Superschüsse</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/77">KC Schlimma gehts Nimma</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/96">KC KKK</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/98">KC Bierwächter</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/70">KC Eurotaucher</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/94">KC El Bacco</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/59">KC Kackstuhl</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/57">Der Club der dichten Köter</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/78">El Gossos</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/69">6 Pils 4 Kre</a>: 4. Durchgang</li>
+	     		<li><a href="/ksm/club/66">KC Eckpinn 1926</a>: 4. Durchgang</li>
+	     	</ul>
+	    </div>
+	    
+    	<div class="news">
+	     	<h1>Ergebnis-Upload am 17. März</h1>
+	     	Im Upload enthalten sind folgende Wertungsdurchgänge:
+	     	<ul>
+	     		<li><a href="/ksm/club/72">Nicht gut, aber durstig</a>: 4. Durchgang</li>
+	     		<li><a href="/ksm/club/83">Auf die Buben</a>: 4. Durchgang</li>
+	     		<li><a href="/ksm/club/95">KC Panzerknacker</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/91">Die Frischlinge</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/90">KC Taugenichtse</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/87">Fegelfreunde</a>: 3. Durchgang</li>
+	     	</ul>
+	    </div>
+    	
+    	<div class="news">
+	     	<h1>Ergebnis-Upload am 15. März</h1>
+	     	Im Upload enthalten sind folgende Wertungsdurchgänge:
+	     	<ul>
+	     		<li><a href="/ksm/club/65">KC Reingedengelt</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/99">Gipfelstürmer</a>: 3. Durchgang</li>
+	     		<li><a href="/ksm/club/62">KC Pegelkegler</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/97">KC Sahneschnitte</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/60">KC Garbker Jungs</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/61">KC Mach Wech</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/74">Die strammen Buben</a>: 4. Durchgang</li>
+	     		<li><a href="/ksm/club/87">Fegelfreunde</a>: 4. Durchgang</li>
+	     	</ul>
+	    </div>
+    	
+    	<div class="news">
+	     	<h1>Ergebnis-Upload am 12. März</h1>
+	     	Im Upload enthalten sind folgende Wertungsdurchgänge:
+	     	<ul>
+	     		<li><a href="/ksm/club/53">VS Rappelkiste nmB</a>: 4. Durchgang</li>
+	     		<li><a href="/ksm/club/69">6 Pils 4 Kre</a>: 3. Durchgang</li>
+	     	</ul>
+	    </div>
+	    
+    	<div class="news">
+	     	<h1>Ergebnis-Upload am 11. März</h1>
+	     	Im Upload enthalten sind folgende Wertungsdurchgänge:
+	     	<ul>
+	     		<li><a href="/ksm/club/56">Gossenjäger</a>: 3. + 4. Durchgang</li>
+	     	</ul>
+	    </div>
+	    
+    	<div class="news">
+	     	<h1>Ergebnis-Upload am 08. März</h1>
+	     	Im Upload enthalten sind folgende Wertungsdurchgänge:
+	     	<ul>
+	     		<li><a href="/ksm/club/50">KC After Nine - dfmA</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/88">Kommt nix bei rum</a>: 3. Durchgang</li>
+	     		<li><a href="/ksm/club/73">KC Zahlreich</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/89">KC Endlich ein Team</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/82">Gebt 8</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/100">KC K.e.R.n.</a>: 2. + 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/71">KC Holzknacker</a>: 4. Durchgang</li>
+	     		<li><a href="/ksm/club/92">KC Umwerfend</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/58">KC Stadtmitte</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/81">KC willewarda</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/66">KC Eckpinn 1926</a>: 3. Durchgang</li>
+	     		<li><a href="/ksm/club/85">KC Plan B</a>: 3. + 4. Durchgang</li>
+	     	</ul>
+	    </div>
+	    
+    	<div class="news">
+	     	<h1>Ergebnis-Upload am 03. März</h1>
+	     	Im Upload enthalten sind folgende Wertungsdurchgänge:
+	     	<ul>
+	     		<li><a href="/ksm/club/72">Nicht gut, aber durstig</a>: 3. Durchgang</li>
+	     		<li><a href="/ksm/club/80">Eine fehlt immer</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/83">Auf die Buben</a>: 3. Durchgang</li>
+	     	</ul>
+	    </div>
+	    
+    	<div class="news">
+	     	<h1>Ergebnis-Upload am 01. März</h1>
+	     	Im Upload enthalten sind folgende Wertungsdurchgänge:
+	     	<ul>
+	     		<li><a href="/ksm/club/102">Die Hammerwerfer</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/101">KC Ordentlich Ordentlich</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/55">KC Gossenbrüder</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/84">KC Glitzer Flitzer</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/93">Räumkommando</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/64">KC Waldenten</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/51">Fast so gut wie schön</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/74">Die strammen Buben</a>: 3. Durchgang</li>
+	     		<li><a href="/ksm/club/71">KC Holzknacker</a>: 3. Durchgang</li>
+	     		<li><a href="/ksm/club/53">VS Rappelkiste nmB</a>: 3. Durchgang</li>
+	     		<li><a href="/ksm/club/86">KC Zufallstreffer</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/68">KC Komafackel</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/63">KC Kegelgötter</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/76">Die Bierkutscher</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/67">KC Gossenschlürfer</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/52">KC Säbelzahnkackstuhl</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/54">TuS Langenholthausen 2</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/75">Die Dritte - Das Herz der SG</a>: 3. + 4. Durchgang</li>
+	     		<li><a href="/ksm/club/91">Die Frischlinge</a>: 2. Durchgang</li>
+	     		<li><a href="/ksm/club/60">KC Garbker Jungs</a>: 2. Durchgang</li>
+	     		<li><a href="/ksm/club/57">Der Club der dichten Köter</a>: 2. Durchgang</li>
+	     	</ul>
+	    </div>
+	    
+    	<div class="news">
+	     	<h1>Ergebnis-Upload am 22. Februar</h1>
+	     	Im Upload enthalten sind folgende Wertungsdurchgänge:
+	     	<ul>
+	     		<li><a href="/ksm/club/79">Die Superschüsse</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/94">KC El Bacco</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/98">KC Bierwächter</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/70">KC Eurotaucher</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/78">El Gossos</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/66">KC Eckpinn 1926</a>: 2. Durchgang</li>
+	     		<li><a href="/ksm/club/72">Nicht gut, aber durstig</a>: 2. Durchgang</li>
+	     		<li><a href="/ksm/club/83">Auf die Buben</a>: 2. Durchgang</li>
+	     		<li><a href="/ksm/club/67">KC Gossenschlürfer</a>: 2. Durchgang</li>
+	     		<li><a href="/ksm/club/52">KC Säbelzahnkackstuhl</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/65">KC Reingedengelt</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/61">KC Mach Wech</a>: 2. Durchgang</li>
+	     	</ul>
+	    </div>
+	    
+    	<div class="news">
+	     	<h1>Ergebnis-Upload am 15. Februar</h1>
+	     	Im Upload enthalten sind folgende Wertungsdurchgänge:
+	     	<ul>
+	     		<li><a href="/ksm/club/100">Gipfelstürmer</a>: 2. Durchgang</li>
+	     		<li><a href="/ksm/club/62">KC Pegelkegler</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/98">KC Sahneschnitte</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/59">KC Kackstuhl</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/60">KC Garbker Jungs</a>: 1. Durchgang</li>
+	     		<li><a href="/ksm/club/74">Die strammen Buben</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/88">Fegelfreunde</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/53">VS Rappelkiste nmB</a>: 2. Durchgang</li>
+	     		<li><a href="/ksm/club/69">6 Pils 4 Kre</a>: 2. Durchgang</li>
+	     		<li><a href="/ksm/club/56">Gossenjäger</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/96">KC Panzerknacker</a>: 1. + 2. Durchgang</li>
+	     	</ul>
+	    </div>
+	    
+    	<div class="news">
+	     	<h1>Ergebnis-Upload am 08. Februar</h1>
+	     	Im Upload enthalten sind folgende Wertungsdurchgänge:
+	     	<ul>
+	     		<li><a href="/ksm/club/89">Kommt nix bei rum</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/50">KC After Nine - dfmA</a>: 1. Durchgang</li>
+	     		<li><a href="/ksm/club/101">KC K.e.R.n.</a>: 1. Durchgang</li>
+	     		<li><a href="/ksm/club/90">KC Endlich ein Team</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/73">KC Zahlreich</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/94">Räumkommando</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/71">KC Holzknacker</a>: 2. Durchgang</li>
+	     		<li><a href="/ksm/club/58">KC Stadtmitte</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/82">KC willewarda</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/66">KC Eckpinn 1926</a>: 1. Durchgang</li>
+	     		<li><a href="/ksm/club/86">KC Plan B</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/72">Nicht gut, aber durstig</a>: 1. Durchgang</li>
+	     		<li><a href="/ksm/club/81">Eine fehlt immer</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/84">Auf die Buben</a>: 1. Durchgang</li>
+	     	</ul>
+	    </div>
+	    
+    	<div class="news">
+	     	<h1>Ergebnis-Upload am 01. Februar</h1>
+	     	Im Upload enthalten sind folgende Wertungsdurchgänge:
+	     	<ul>
+	     		<li><a href="/ksm/club/92">Die Frischlinge</a>: 1. Durchgang</li>
+	     		<li><a href="/ksm/club/55">KC Gossenbrüder</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/103">Die Hammerwerfer</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/102">KC Ordentlich Ordentlich</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/85">KC Glitzer Flitzer</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/83">Gebt 8</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/64">KC Waldenten</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/51">Fast so gut wie schön</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/71">KC Holzknacker</a>: 1. Durchgang</li>
+	     		<li><a href="/ksm/club/13">VS Rappelkiste nmB</a>: 1. Durchgang</li>
+	     		<li><a href="/ksm/club/69">6 Pils 4 Kre</a>: 1. Durchgang</li>
+	     		<li><a href="/ksm/club/87">KC Zufallstreffer</a>: 1. + 2. Durchgang</li>
+	     	</ul>
+	    </div>
+	    
+    	<div class="news">
+	     	<h1>Ergebnis-Upload am 26. Januar</h1>
+	     	Im Upload enthalten sind folgende Wertungsdurchgänge:
+	     	<ul>
+	     		<li><a href="/ksm/club/91">KC Taugenichtse</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/77">KC Schlimma gehts Nimma</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/97">KC KKK</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/67">KC Gossenschlürfer</a>: 1. Durchgang</li>
+	     		<li><a href="/ksm/club/93">KC Umwerfend</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/68">KC Komafackel</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/63">KC Kegelgötter</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/57">Der Club der dichten Köter</a>: 1. Durchgang</li>
+	     		<li><a href="/ksm/club/76">Die Bierkutscher</a>: 1. + 2. Durchgang</li>
+	     	</ul>
+	    </div>
+	    
+    	<div class="news">
+	     	<h1>Ergebnis-Upload am 21. Januar</h1>
+	     	Im Upload enthalten sind folgende Wertungsdurchgänge:
+	     	<ul>
+	     		<li><a href="/ksm/club/100">Gipfelstürmer</a>: 1. Durchgang</li>
+	     		<li><a href="/ksm/club/54">TuS Langenholthausen 2</a>: 1. + 2. Durchgang</li>
+	     		<li><a href="/ksm/club/61">KC Mach Wech</a>: 1. Durchgang</li>
+	     		<li><a href="/ksm/club/75">Die Dritte - Das Herz der SG</a>: 1. + 2. Durchgang</li>
+	     	</ul>
+	    </div>
+	    
+    	<div class="news">
+	     	<h1>Beitrag von Mammutstark TV vom 16.01.2015 zur Kegelstadtmeisterschaft</h1>
+	     	<iframe width="873" height="525" src="//www.youtube.com/embed/bQGhlOUeQx0"></iframe>
+	    </div>
+	    
+    	<div class="news">
+	     	<h1>Ab hier folgen die News von 2014</h1>
+	    </div>
+	    
     	<div class="news">
 	     	<h1>Ergebnis-Upload am 09. März</h1>
 	     	Im Upload enthalten sind folgende Wertungsdurchgänge:

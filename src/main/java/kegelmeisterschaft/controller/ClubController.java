@@ -27,21 +27,21 @@ public class ClubController {
     public ModelAndView showMenClubs(@PathVariable("year") String year,
 	    @RequestParam(value = "column", defaultValue = "") final String column,
 	    @RequestParam(value = "order", defaultValue = "desc") final String order) {
-	return createModel(ClubType.MALE, "Herren", "/ksm/clubs/herren", column, order, year);
+	return createModel(ClubType.MALE, "Herren", "/ksm/" + year + "/clubs/herren", column, order, year);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/{year}/clubs/damen")
     public ModelAndView showWomen(@PathVariable("year") String year,
 	    @RequestParam(value = "column", defaultValue = "") final String column,
 	    @RequestParam(value = "order", defaultValue = "desc") final String order) {
-	return createModel(ClubType.FEMALE, "Damen", "/ksm/clubs/damen", column, order, year);
+	return createModel(ClubType.FEMALE, "Damen", "/ksm/" + year + "/clubs/damen", column, order, year);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/{year}/clubs/mixed")
     public ModelAndView showMixed(@PathVariable("year") String year,
 	    @RequestParam(value = "column", defaultValue = "") final String column,
 	    @RequestParam(value = "order", defaultValue = "desc") final String order) {
-	return createModel(ClubType.MIXED, "Gemischte Clubs", "/ksm/clubs/mixed", column, order, year);
+	return createModel(ClubType.MIXED, "Gemischte Clubs", "/ksm/" + year + "/clubs/mixed", column, order, year);
     }
 
     private ModelAndView createModel(ClubType type, String descr, String rootURL, String column, String order,

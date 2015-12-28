@@ -88,14 +88,14 @@
 		    		</ul>
 		    	</li>
 		    	<li><a href="/ksm/2015/termine">Termine</a></li>
-		    	<li><a href="/ksm/2014/kinder">Spezialkegeln</a>
+		    	<li><a href="/ksm/2015/kinder">Spezialkegeln</a>
 		    		<ul>
-		    			<li class="sub" style="width: 130px; margin-top: 3px;"><a href="/ksm/2014/kinder">&#62; Kinderkegeln</a></li>
-		    			<li class="sub" style="width: 130px;"><a href="/ksm/2014/tandem">&#62; Tandemkegeln</a></li>
+		    			<li class="sub" style="width: 135px; margin-top: 3px;"><a href="/ksm/2015/kinder">&#62; Kinderkegeln 2015</a></li>
+		    			<li class="sub" style="width: 135px; margin-top: 3px;"><a href="/ksm/2014/kinder">&#62; Kinderkegeln 2014</a></li>
+		    			<li class="sub" style="width: 135px;"><a href="/ksm/2015/tandem">&#62; Tandemkegeln 2015</a></li>
+		    			<li class="sub" style="width: 135px;"><a href="/ksm/2014/tandem">&#62; Tandemkegeln 2014</a></li>
 		    		</ul>
 		    	</li>
-		    	<!-- <li><a href="/ksm/kinder">Kinderkegeln</a></li> -->
-		    	<!-- <li><a href="/ksm/tandem">Tandemkegeln</a></li> -->
 		    	<li><a href="/ksm/gaestebuch">Gästebuch</a></li>
 		    	<li><a href="/ksm/kontakt">Kontakt</a></li>
 		  	</ul>
@@ -105,6 +105,12 @@
 		  	</div>
 		</div>
 		<!-- End Navigation Bar -->
+		
+		<!-- 
+		 -->
+		<div class="nav-bar">
+			<div class="promo">Achtung: Am 3. Juli findet um 20:00 Uhr die Kegelversammlung bei Padberg statt.</div>
+		</div>
 		
 		<!-- Start Outer Content -->
 		<div id="outercontent">

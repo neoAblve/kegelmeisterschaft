@@ -69,8 +69,8 @@ public class ClubResultModel extends RoundResultModel {
 		    addResult(result);
 
 		ResultBean thirdMale = male.get(2);
-		ResultBean thirdFemale = female.get(2);
-		if (ResultBean.SCORE_COMPARATOR.compare(thirdMale, thirdFemale) <= 0)
+		ResultBean thirdFemale = female.size() > 2 ? female.get(2) : null;
+		if (thirdFemale == null || ResultBean.SCORE_COMPARATOR.compare(thirdMale, thirdFemale) <= 0)
 		    addResult(thirdMale);
 		else
 		    addResult(thirdFemale);
