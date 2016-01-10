@@ -2,7 +2,7 @@ body {
  font-family: Arial, Helvetica, sans-serif;
  color: #FEFEFE;
  font-size: 12px;
- background-color: #03190C;
+ background-color: #FFFFFF;
  background-repeat:repeat;
 }
 
@@ -56,7 +56,7 @@ sup {
 /* ------------------------ Start Header -----------------*/
 .header {
  margin: 0px 0px 8px 0px;
- background-color: #03190C;
+ background-color: #FFFFFF;
  min-height: 130px;
 }
 
@@ -87,7 +87,7 @@ sup {
 
 /* ------------------------ Start Nav Bar -----------------*/
 .nav-bar {
-	background-color: #2F4537;
+	background-color: #000000;
 	margin: 0px 0px 8px 0px;
 	border: 1px solid #AEAEAE;
 	position: relative;
@@ -104,12 +104,12 @@ sup {
 	position: relative;
 	list-style: none;
 	margin-right: 12px;
-	background-color: #2F4537;
+	background-color: #000000;
 	z-index: 999;
 }
 
 .nav-links li a:link {
- background-color: #2F4537;
+ background-color: #000000;
  color: #FEFEFE;
  font-weight: bold;
  font-size: 13px;
@@ -117,7 +117,7 @@ sup {
 }
 
 .nav-links li a:visited {
- background-color: #2F4537;
+ background-color: #000000;
  color: #FEFEFE;
  font-weight: bold;
  font-size: 13px;
@@ -125,8 +125,8 @@ sup {
 }
 
 .nav-links li a:hover {
- background-color: #2F4537;
- color: #999999;
+ background-color: #000000;
+ color: #9f9f9f;
  font-weight: bold;
  font-size: 13px;
  text-decoration: none;
@@ -169,7 +169,7 @@ sup {
 
 /* ------------------------ Start outer content -----------------*/
 #outercontent {
- background-color: #2F4537;
+ background-color: #000000;
  width: 924px;
  padding: 13px;
  margin-bottom: 8px;
@@ -183,10 +183,11 @@ sup {
 
 /* ------------------------ Start Columns -----------------*/
 #centercolumn { 
- background-color: #03190C;
- border: 1px solid #AEAEAE;
+ background-color: #3f3f43;
+ border: 0px solid #AEAEAE;
  margin: 0px 0px 0px 0px;
  padding: 7px;
+ padding-bottom: 10px;
  color: #FEFEFE;
 }
 
@@ -211,8 +212,8 @@ sup {
  padding: 7px;
  width: 238px;
  font-size: 13px;
- border: 1px solid #AEAEAE;
- background-color: #03190C;
+ border: 0px solid #AEAEAE;
+ background-color: #9f0005;
 }
 
 .rightcolumn ul {
@@ -227,7 +228,7 @@ sup {
  border: 1px solid #AEAEAE;
  padding: 15px;
  margin-bottom: 8px;
- background-color: #2F4537;
+ background-color: #000000;
  text-align: center;
 }
 /* ------------------------ End Footer -----------------*/
@@ -248,7 +249,6 @@ a:visited {
 }
 a:hover {
  color: #999999;
- /*background-color: #FEFEFE;*/
  text-decoration: none;
 }
 
@@ -257,9 +257,8 @@ a:hover {
 	width: 100%;
 	color: #FEFEFE;
 	font-size: small;
-	background-color: #514031;
+	background-color: #741b0e;
 	border-collapse:collapse;
-	/*border: 1px solid white;*/
 	text-align: left;
 }
 
@@ -270,9 +269,8 @@ a:hover {
 .dynData {
 	color: #FEFEFE;
 	font-size: small;
-	background-color: #514031;
+	background-color: #741b0e;
 	border-collapse:collapse;
-	/*border: 1px solid white;*/
 	text-align: left;
 }
 
@@ -283,7 +281,7 @@ a:hover {
 
 .head {
 	font-weight: bold;
-	background-color: #2F4537;
+	background-color: #3f3f43;/*#514031;*/
 	padding: 2px;
 }
 
@@ -303,7 +301,7 @@ a:hover {
 }
 
 .alt {
-	background-color: #2F4537;
+	background-color: #3f3f43;
 }
 
 .bold {
@@ -315,10 +313,10 @@ a:hover {
 }
 
 .news {
-	background-color: #2F4537;
-    border: 1px solid #AEAEAE;
+	background-color: #000000;
+    border: 0px solid #FFFFFF;
     font-size: 13px;
-    margin: 10px 8px 13px;
+    margin: 10px 0px 13px;
     padding: 7px;
     color: #FEFEFE;
 }

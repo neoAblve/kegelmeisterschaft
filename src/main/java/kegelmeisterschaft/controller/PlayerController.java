@@ -61,7 +61,7 @@ public class PlayerController {
 	mv.addObject("type", descr);
 	mv.addObject("typeLower", descr.toLowerCase());
 	mv.addObject("year", year);
-	mv.addObject("otherYear", ConfigModelUtil.getOtherYear(year));
+	mv.addObject("otherYears", ConfigModelUtil.getOtherYears(year));
 	mv.addObject("headTop", resultService.getNextHeadModel());
 	mv.addObject("rootURL", rootURL);
 	mv.addObject("column", column);
@@ -69,5 +69,4 @@ public class PlayerController {
 	mv.addObject("data", resultService.providePlayerResultsByGenderAndYear(gender, comp, desc, year));
 	return mv;
     }
-
 }

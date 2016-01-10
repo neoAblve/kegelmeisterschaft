@@ -51,6 +51,13 @@ public class StartController {
 	return mv;
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/{year}/ausrichter")
+    public ModelAndView ausrichter(@PathVariable("year") String year) {
+	ModelAndView mv = new ModelAndView(year + "/ausrichter");
+	mv.addObject("headTop", resultService.getNextHeadModel());
+	return mv;
+    }
+
     @RequestMapping(method = RequestMethod.GET, value = "/news")
     public ModelAndView news() {
 	ModelAndView mv = new ModelAndView("news");

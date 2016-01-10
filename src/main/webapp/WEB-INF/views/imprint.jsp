@@ -7,9 +7,9 @@
 		<h1>Impressum</h1>
 		<p>Angaben gemäß § 5 TMG:<br/></p>
 		<p>
-			KC After Nine dfmA<br />
+			KC Schlimma gehts Nimma<br />
 			Kegelclub<br />
-			Hangweg 20<br />
+			Am Husenberg 8<br />
 			58802 Balve<br />
 		</p>
 		<div class="space"></div>

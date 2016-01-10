@@ -32,6 +32,7 @@ public class ImporterService {
 	{
 	    put("2014", new CSVImporter());
 	    put("2015", new XLSXImporter());
+	    put("2016", new XLSXImporter());
 	}
     };
 
@@ -221,7 +222,7 @@ public class ImporterService {
 		}
 
 		if (player.isSingleRelevant()) {
-		    System.out.println("\t\t\tset single league club");
+		    System.out.println("\t\t\tset single league player");
 		    existing.setSingleLeagueClub(club);
 		}
 	    }

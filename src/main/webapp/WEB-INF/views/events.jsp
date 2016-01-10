@@ -5,18 +5,25 @@
 <t:layout>
 	<jsp:attribute name="wide">true</jsp:attribute>
     <jsp:body>
-    	<h1>Übersicht über die Kegeltermine - ${year}<span class="otherYear"><a href="/ksm/${otherYear}/termine">zu den Terminen von ${otherYear}</a></span></h1>
+    	<h1>Übersicht über die Kegeltermine - ${year}
+    		<span class="otherYear">
+    			zu den Terminen von |
+    			<c:forEach items="${otherYears}" var="otherYear" varStatus="rowCounter">
+    				<a href="/ksm/${otherYear}/termine">${otherYear} |</a>
+    			</c:forEach>
+    		</span>
+    	</h1>
     	<div class="space"></div>
     	<table class="data">
     		<thead class="head">
     			<tr>
-    				<td>Datum</td>
-    				<td>Uhrzeit</td>
-    				<td>Club</td>
-    				<td>Bahn</td>
-					<td>Durchgang</td>
-					<td>1. Aufschreiber</td>
-					<td>2. Aufschreiber</td>
+    				<td width="18%">Datum</td>
+    				<td width="7%">Uhrzeit</td>
+    				<td width="17%">Club</td>
+    				<td width="19%">Bahn</td>
+					<td width="5%">Durchgang</td>
+					<td width="18%">1. Aufschreiber</td>
+					<td width="16%">2. Aufschreiber</td>
 				</tr>
 			</thead>
 			<tbody>

@@ -134,7 +134,7 @@
 				<c:if test="${model.hasNotClubRelevant}">
 					<c:set var="odd" value="${not odd}" />		
 					<tr class="${not odd ? 'alt' : ''}">
-						<td class="legend" colspan="11"><sup>1</sup>: Durchgang wurde vorgelegt bzw. nachgeholt und ist für die Clubwertung nicht relevant</td>
+						<td class="legend" colspan="12"><sup>1</sup>: Durchgang wurde vorgelegt bzw. nachgeholt und ist für die Clubwertung nicht relevant</td>
 					</tr>
 				</c:if>
 			</tbody>

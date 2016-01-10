@@ -34,7 +34,7 @@ public class CheckerController {
 	mv.addObject("type", title);
 	mv.addObject("typeLower", title.toLowerCase());
 	mv.addObject("year", year);
-	mv.addObject("otherYear", ConfigModelUtil.getOtherYear(year));
+	mv.addObject("otherYears", ConfigModelUtil.getOtherYears(year));
 	mv.addObject("headTop", resultService.getNextHeadModel());
 	mv.addObject("data", resultService.provideCheckerResultsByGenderAndYear(gender, year));
 	return mv;

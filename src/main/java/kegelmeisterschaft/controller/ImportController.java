@@ -25,7 +25,7 @@ public class ImportController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/import/{pwd}")
     public ModelAndView importData(@PathVariable("pwd") String pwd) throws IOException, ParseException {
-	if (StringUtils.equals(pwd, "nine"))
+	if (StringUtils.equals(pwd, "sgn"))
 	    importService.performImport();
 	ModelAndView mv = new ModelAndView("start");
 	mv.addObject("headTop", resultService.getNextHeadModel());

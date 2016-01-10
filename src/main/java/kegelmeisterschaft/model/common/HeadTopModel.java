@@ -3,6 +3,7 @@ package kegelmeisterschaft.model.common;
 import java.util.HashMap;
 import java.util.List;
 
+import kegelmeisterschaft.model.ConfigModelUtil;
 import kegelmeisterschaft.model.result.CheckerResultModel;
 import kegelmeisterschaft.model.result.ClubResultModel;
 import kegelmeisterschaft.model.result.PlayerResultModel;
@@ -38,8 +39,8 @@ public class HeadTopModel {
 	    return;
 	for (int i = 0; i < rows.length; i++) {
 	    ClubResultModel clubResult = results.get(i);
-	    rows[i] = new HeadTopRow(clubResult.getClub().getName(),
-		    clubResult.getTotalNinerCount(), clubResult.getTotalScore());
+	    rows[i] = new HeadTopRow(clubResult.getClub().getName(), clubResult.getTotalNinerCount(),
+		    clubResult.getTotalScore());
 	}
     }
 
@@ -48,10 +49,8 @@ public class HeadTopModel {
 	    return;
 	for (int i = 0; i < rows.length; i++) {
 	    PlayerResultModel playerResult = results.get(i);
-	    String name = playerResult.getPlayer().getFirstName() + " "
-		    + playerResult.getPlayer().getLastName();
-	    rows[i] = new HeadTopRow(name, playerResult.getTotalNinerCount(),
-		    playerResult.getTotalScore());
+	    String name = playerResult.getPlayer().getFirstName() + " " + playerResult.getPlayer().getLastName();
+	    rows[i] = new HeadTopRow(name, playerResult.getTotalNinerCount(), playerResult.getTotalScore());
 	}
     }
 
@@ -60,10 +59,8 @@ public class HeadTopModel {
 	    return;
 	for (int i = 0; i < rows.length; i++) {
 	    CheckerResultModel checkerResult = results.get(i);
-	    String name = checkerResult.getChecker().getFirstName() + " "
-		    + checkerResult.getChecker().getLastName();
-	    rows[i] = new HeadTopRow(name, checkerResult.getNinerCount(),
-		    checkerResult.getScore());
+	    String name = checkerResult.getChecker().getFirstName() + " " + checkerResult.getChecker().getLastName();
+	    rows[i] = new HeadTopRow(name, checkerResult.getNinerCount(), checkerResult.getScore());
 	}
     }
 
@@ -73,5 +70,9 @@ public class HeadTopModel {
 
     public HeadTopRow[] getRows() {
 	return rows;
+    }
+
+    public String getRecentYear() {
+	return ConfigModelUtil.RECENT_YEAR;
     }
 }

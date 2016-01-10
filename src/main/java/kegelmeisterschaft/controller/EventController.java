@@ -21,7 +21,7 @@ public class EventController {
     public ModelAndView showMenClubs(@PathVariable("year") String year) {
 	ModelAndView mv = new ModelAndView("events");
 	mv.addObject("year", year);
-	mv.addObject("otherYear", ConfigModelUtil.getOtherYear(year));
+	mv.addObject("otherYears", ConfigModelUtil.getOtherYears(year));
 	mv.addObject("headTop", resultService.getNextHeadModel());
 	mv.addObject("data", resultService.provideEvents(year));
 	return mv;

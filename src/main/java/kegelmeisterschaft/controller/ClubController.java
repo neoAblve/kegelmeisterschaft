@@ -64,7 +64,7 @@ public class ClubController {
 	mv.addObject("type", descr);
 	mv.addObject("typeLower", oldType);
 	mv.addObject("year", year);
-	mv.addObject("otherYear", ConfigModelUtil.getOtherYear(year));
+	mv.addObject("otherYears", ConfigModelUtil.getOtherYears(year));
 	mv.addObject("headTop", resultService.getNextHeadModel());
 	mv.addObject("rootURL", rootURL);
 	mv.addObject("column", column);

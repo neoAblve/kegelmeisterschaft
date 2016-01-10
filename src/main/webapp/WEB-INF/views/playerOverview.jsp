@@ -5,7 +5,14 @@
 <t:layout>
 	<jsp:attribute name="wide">true</jsp:attribute>
     <jsp:body>
-    	<h1>Einzelwertung - ${type} - ${year}<span class="otherYear"><a href="/ksm/${otherYear}/einzel/${typeLower}">zur Wertung von ${otherYear}</a></span></h1>
+    	<h1>Einzelwertung - ${type} - ${year}
+    		<span class="otherYear">
+    			zur Wertung von |
+    			<c:forEach items="${otherYears}" var="otherYear" varStatus="rowCounter">
+    				<a href="/ksm/${otherYear}/einzel/${typeLower}">${otherYear} |</a>
+    			</c:forEach>
+    		</span>
+    	</h1>
     	<div class="space"></div>
     	<table class="data">
     		<thead class="head">

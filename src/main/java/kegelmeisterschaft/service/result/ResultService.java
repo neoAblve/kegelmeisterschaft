@@ -54,8 +54,11 @@ public class ResultService {
     public List<ClubResultModel> provideClubsResultsByTypeAndYear(ClubType type, Comparator<RoundResultModel> comp,
 	    boolean desc, String year) {
 	List<ClubResultModel> results = new ArrayList<ClubResultModel>();
-	for (ClubBean club : clubHome.listByNamedQuery(ClubBean.FIND_BY_TYPE_AND_YEAR, type, year))
+	for (ClubBean club : clubHome.listByNamedQuery(ClubBean.FIND_BY_TYPE_AND_YEAR, type, year)) {
+	    if (club.getName().equals("Nur Einzelwertung"))
+		continue;
 	    results.add(new ClubResultModel(club, resultHome.listByNamedQuery(ResultBean.FIND_BY_CLUB, club)));
+	}
 
 	if (comp != null)
 	    Collections.sort(results, comp);
