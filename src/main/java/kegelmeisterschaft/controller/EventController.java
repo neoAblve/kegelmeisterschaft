@@ -17,12 +17,15 @@ public class EventController {
     @Autowired
     private ResultService resultService;
 
+    @Autowired
+    ControllerHelper helper;
+
     @RequestMapping(method = RequestMethod.GET, value = "/{year}/termine")
     public ModelAndView showMenClubs(@PathVariable("year") String year) {
 	ModelAndView mv = new ModelAndView("events");
 	mv.addObject("year", year);
 	mv.addObject("otherYears", ConfigModelUtil.getOtherYears(year));
-	mv.addObject("headTop", resultService.getNextHeadModel());
+	helper.addCommonModels(mv);
 	mv.addObject("data", resultService.provideEvents(year));
 	return mv;
     }

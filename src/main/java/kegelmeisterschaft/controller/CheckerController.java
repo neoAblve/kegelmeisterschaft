@@ -19,6 +19,9 @@ public class CheckerController {
     @Autowired
     private ResultService resultService;
 
+    @Autowired
+    ControllerHelper helper;
+
     @RequestMapping(method = RequestMethod.GET, value = "/{year}/aufschreiber/herren")
     public ModelAndView showMaleOverview(WebRequest webRequest, @PathVariable("year") String year) {
 	return getCheckerResults("Herren", Gender.MALE, year);
@@ -35,7 +38,7 @@ public class CheckerController {
 	mv.addObject("typeLower", title.toLowerCase());
 	mv.addObject("year", year);
 	mv.addObject("otherYears", ConfigModelUtil.getOtherYears(year));
-	mv.addObject("headTop", resultService.getNextHeadModel());
+	helper.addCommonModels(mv);
 	mv.addObject("data", resultService.provideCheckerResultsByGenderAndYear(gender, year));
 	return mv;
     }

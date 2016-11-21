@@ -29,6 +29,9 @@ public class ExportController {
     @Autowired
     private ResultService resultService;
 
+    @Autowired
+    ControllerHelper helper;
+
     @RequestMapping(method = RequestMethod.GET, value = "/export/{year}")
     public ModelAndView exportResults(@PathVariable("year") String year) throws IOException {
 	exportClubs(year, ClubType.MALE);
@@ -40,7 +43,7 @@ public class ExportController {
 	exportChecker(year, Gender.FEMALE);
 
 	ModelAndView mv = new ModelAndView("start");
-	mv.addObject("headTop", resultService.getNextHeadModel());
+	helper.addCommonModels(mv);
 	return mv;
     }
 

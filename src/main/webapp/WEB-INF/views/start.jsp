@@ -7,16 +7,20 @@
 	</jsp:attribute>
 	<jsp:attribute name="rightTeaser">
 		<!-- Start Right Content -->
-	    <!-- 
 	   	<div class="rightcolumn">
 	     	<h1>Ergebnis-Update</h1>
-	     	Die Ergebnisse letzten Durchgänge Stadtmeisterschaft sind nun online.<br />
+	     	Ergebnissstand: 20. März<br />
 	     	<br />
 	     	<a href="/ksm/news">&lt;&lt;&lt;Klick&gt;&gt;&gt;</a> 
 	     	<br />
+	     	<a href="/ksm/2016/kinder">&lt;&lt;&lt;Kinderkegeln&gt;&gt;&gt;</a> 
 	     	<br />
-	     	Allen Stadtmeistern wünschen wir "Herzlichen Glückwunsch" und bedanken und gleichzeitig bei allem Keglern.
+	     	<a href="/ksm/2016/tandem">&lt;&lt;&lt;Tandemkegeln&gt;&gt;&gt;</a> 
+	     	<br />
+	     	<br />
+	     	Allen Gewinnern: <br /> Herzlichen Glückwunsch!!!
 	    </div>
+	    <!-- 
 	   	<div class="rightcolumn">
 	     	<h1>Kinder-/Tandemkegeln</h1>
 	     	Ergebnisse hier:

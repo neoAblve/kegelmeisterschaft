@@ -24,15 +24,17 @@ import org.springframework.stereotype.Component;
 public class MailerService {
 
     private static final SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm.ss");
-    private static final String USERNAME = "mathis.schweitzer@web.de";
-    private static final String PASSWORD = "p7zVKZJP";
+    private static final String USERNAME = "your username";
+    private static final String PASSWORD = "your password";
+    private static final String SMTP_HOSTNAME = "your smtp server";
+    private static final String IMAP_HOSTNAME = "your imap server";
 
     public boolean sendInfoMail(ContactModel contact) {
 	try {
 	    doImap();
 
 	    Properties props = System.getProperties();
-	    props.put("mail.smtp.host", "smtp.web.de");
+	    props.put("mail.smtp.host", SMTP_HOSTNAME);
 	    props.put("mail.smtp.port", "587");
 	    props.put("mail.transport.protocol", "smtp");
 	    props.put("mail.smtp.auth", "true");
@@ -75,12 +77,10 @@ public class MailerService {
 	    props.setProperty("mail.imap.ssl.enable", "true");
 	    Session session = Session.getDefaultInstance(props, null);
 	    Store store = session.getStore("imaps");
-	    store.connect("imap.web.de", USERNAME, PASSWORD);
+	    store.connect(IMAP_HOSTNAME, USERNAME, PASSWORD);
 
 	    Folder inbox = store.getFolder("INBOX");
 	    inbox.open(Folder.READ_ONLY);
-
-	    // Message[] messages = inbox.getMessages();
 
 	    inbox.close(false);
 	    store.close();

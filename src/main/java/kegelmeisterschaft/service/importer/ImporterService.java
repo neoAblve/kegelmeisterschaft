@@ -80,7 +80,7 @@ public class ImporterService {
     }
 
     private void importResults(String year) {
-	System.out.println("Importing Results");
+	System.out.println("Importing Results of: " + year);
 	List<ClubBean> clubs = clubHome.listByNamedQuery(ClubBean.FIND_BY_YEAR, year);
 	for (ClubBean club : clubs) {
 	    System.out.println("\tworking on Club: " + club.getName());
@@ -104,8 +104,7 @@ public class ImporterService {
 		    playerDependend = true;
 		}
 
-		// System.out.println(result.getFirstName() + " - " +
-		// result.getLastName());
+		System.out.println(result.getFirstName() + " - " + result.getLastName());
 		result.setClub(club);
 		PlayerBean player = playerHome.findExactlyOneByNamedQuery(PlayerBean.FIND_BY_NAME_AND_YEAR,
 			result.getFirstName(), result.getLastName(), year);

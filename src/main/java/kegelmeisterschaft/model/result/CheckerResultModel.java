@@ -11,8 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 
 public class CheckerResultModel extends ResultModel {
 
-    public final static SimpleDateFormat EVENT_FORMAT = new SimpleDateFormat(
-	    "dd.MM.yyyy HH:mm 'Uhr'");
+    public final static SimpleDateFormat EVENT_FORMAT = new SimpleDateFormat("dd.MM. HH:mm 'Uhr'");
 
     private int rank;
     private PlayerBean checker;

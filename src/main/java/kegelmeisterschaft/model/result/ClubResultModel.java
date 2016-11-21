@@ -46,10 +46,11 @@ public class ClubResultModel extends RoundResultModel {
 	}
 
 	for (int i = 1; i <= ROUND_COUNT; i++) {
+	    // System.out.println("Club:" + club.getName());
+
 	    ArrayList<ResultBean> results = roundResults.get(i);
 	    if (results == null)
 		continue;
-
 	    Collections.sort(results, ResultBean.SCORE_COMPARATOR);
 
 	    if (ClubType.MIXED == club.getType()) {
@@ -62,24 +63,28 @@ public class ClubResultModel extends RoundResultModel {
 			female.add(result);
 		}
 
-		for (ResultBean result : male.subList(0, Math.min(results.size(), 2)))
+		for (ResultBean result : male.subList(0, Math.min(male.size(), 2)))
 		    addResult(result);
-
-		for (ResultBean result : female.subList(0, Math.min(results.size(), 2)))
+		for (ResultBean result : female.subList(0, Math.min(female.size(), 2)))
 		    addResult(result);
-
-		ResultBean thirdMale = male.get(2);
+		ResultBean thirdMale = male.size() > 2 ? male.get(2) : null;
 		ResultBean thirdFemale = female.size() > 2 ? female.get(2) : null;
-		if (thirdFemale == null || ResultBean.SCORE_COMPARATOR.compare(thirdMale, thirdFemale) <= 0)
-		    addResult(thirdMale);
-		else
-		    addResult(thirdFemale);
-
+		addResult(getThirdResult(thirdMale, thirdFemale));
 	    } else {
 		for (ResultBean result : results.subList(0, Math.min(results.size(), 5)))
 		    addResult(result);
 	    }
 	}
+    }
+
+    private ResultBean getThirdResult(ResultBean thirdMale, ResultBean thirdFemale) {
+	if (thirdMale != null && thirdFemale != null) {
+	    return (ResultBean.SCORE_COMPARATOR.compare(thirdMale, thirdFemale) <= 0) ? thirdMale : thirdFemale;
+	}
+
+	if (thirdMale != null)
+	    return thirdMale;
+	return thirdFemale;
     }
 
     public ClubBean getClub() {

@@ -24,6 +24,9 @@ public class ContactController {
     @Autowired
     private ResultService resultService;
 
+    @Autowired
+    ControllerHelper helper;
+
     @RequestMapping(value = "/kontakt/senden", method = RequestMethod.POST)
     public ModelAndView addContact(@Valid @ModelAttribute("contact") ContactModel contact, BindingResult result) {
 	ModelAndView mv = new ModelAndView("contact", "contact", contact);

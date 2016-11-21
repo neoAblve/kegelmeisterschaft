@@ -166,6 +166,10 @@ sup {
 	z-index: -1;
 }
 
+.adverts {
+	float: right;
+	margin-right: -285px;
+}
 
 /* ------------------------ Start outer content -----------------*/
 #outercontent {
@@ -313,7 +317,7 @@ a:hover {
 }
 
 .news {
-	background-color: #000000;
+	background-color: #741b0e;
     border: 0px solid #FFFFFF;
     font-size: 13px;
     margin: 10px 0px 13px;

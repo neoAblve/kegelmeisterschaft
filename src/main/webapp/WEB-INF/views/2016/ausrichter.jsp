@@ -71,5 +71,8 @@
 			Marcel Mertens<br />
 			Kegelvater KC Schlimma geht’s Nimma
 		</p>
+		
+		<br />
+		<img width="905px" src="/images/kc_sgn.JPG" />
     </jsp:body>
 </t:layout>

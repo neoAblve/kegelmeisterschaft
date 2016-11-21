@@ -21,6 +21,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class PlayerController {
 
     @Autowired
+    ControllerHelper helper;
+
+    @Autowired
     private ResultService resultService;
 
     @RequestMapping(method = RequestMethod.GET, value = "/{year}/einzel/herren")
@@ -40,7 +43,7 @@ public class PlayerController {
     @RequestMapping(method = RequestMethod.GET, value = "/kegler/{id}")
     public ModelAndView getPlayerDetail(@PathVariable("id") int id) {
 	ModelAndView mv = new ModelAndView("playerDetail");
-	mv.addObject("headTop", resultService.getNextHeadModel());
+	helper.addCommonModels(mv);
 	mv.addObject("model", resultService.providePlayerDetails(id));
 	return mv;
     }
@@ -62,7 +65,7 @@ public class PlayerController {
 	mv.addObject("typeLower", descr.toLowerCase());
 	mv.addObject("year", year);
 	mv.addObject("otherYears", ConfigModelUtil.getOtherYears(year));
-	mv.addObject("headTop", resultService.getNextHeadModel());
+	helper.addCommonModels(mv);
 	mv.addObject("rootURL", rootURL);
 	mv.addObject("column", column);
 	mv.addObject("order", desc ? "asc" : "desc");

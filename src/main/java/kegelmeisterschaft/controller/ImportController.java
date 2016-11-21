@@ -17,18 +17,23 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping
 public class ImportController {
+    private static final String IMPORT_PASSWORD = "your_import_password";
+
     @Autowired
     private ImporterService importService;
 
     @Autowired
     private ResultService resultService;
 
+    @Autowired
+    ControllerHelper helper;
+
     @RequestMapping(method = RequestMethod.GET, value = "/import/{pwd}")
     public ModelAndView importData(@PathVariable("pwd") String pwd) throws IOException, ParseException {
-	if (StringUtils.equals(pwd, "sgn"))
+	if (StringUtils.equals(pwd, IMPORT_PASSWORD))
 	    importService.performImport();
 	ModelAndView mv = new ModelAndView("start");
-	mv.addObject("headTop", resultService.getNextHeadModel());
+	helper.addCommonModels(mv);
 	return mv;
     }
 

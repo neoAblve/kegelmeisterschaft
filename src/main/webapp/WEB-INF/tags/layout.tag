@@ -88,13 +88,19 @@
 		    			<li class="sub" style="width: 90px;"><a href="/ksm/${headTop.recentYear}/aufschreiber/damen">&#62; Damen</a></li>
 		    		</ul>
 		    	</li>
-		    	<li><a href="/ksm/${headTop.recentYear}/termine">Termine</a></li>
-		    	<li><a href="/ksm/2015/kinder">Spezialkegeln</a>
+		    	<li><a href="/ksm/${headTop.recentYear}/termine#week_${currentWeek}">Termine</a></li>
+		    	<li><a href="/ksm/2016/kinder">Kinderkegeln</a>
 		    		<ul>
+		    			<li class="sub" style="width: 135px; margin-top: 3px;"><a href="/ksm/2015/kinder">&#62; Kinderkegeln 2016</a></li>
 		    			<li class="sub" style="width: 135px; margin-top: 3px;"><a href="/ksm/2015/kinder">&#62; Kinderkegeln 2015</a></li>
-		    			<li class="sub" style="width: 135px; margin-top: 3px;"><a href="/ksm/2014/kinder">&#62; Kinderkegeln 2014</a></li>
-		    			<li class="sub" style="width: 135px;"><a href="/ksm/2015/tandem">&#62; Tandemkegeln 2015</a></li>
-		    			<li class="sub" style="width: 135px;"><a href="/ksm/2014/tandem">&#62; Tandemkegeln 2014</a></li>
+		    			<li class="sub" style="width: 135px; padding-top: 3px;"><a href="/ksm/2014/kinder">&#62; Kinderkegeln 2014</a></li>
+		    		</ul>
+		    	</li>
+		    	<li><a href="/ksm/2016/tandem">Tandemkegeln</a>
+		    		<ul>
+		    			<li class="sub" style="width: 135px; margin-top: 3px;"><a href="/ksm/2016/tandem">&#62; Tandemkegeln 2016</a></li>
+		    			<li class="sub" style="width: 135px; margin-top: 3px;"><a href="/ksm/2015/tandem">&#62; Tandemkegeln 2015</a></li>
+		    			<li class="sub" style="width: 135px; padding-top: 3px;"><a href="/ksm/2014/tandem">&#62; Tandemkegeln 2014</a></li>
 		    		</ul>
 		    	</li>
 		    	<li><a href="/ksm/gaestebuch">Gästebuch</a></li>
@@ -114,6 +120,12 @@
 			<div class="promo">Achtung: Am 3. Juli findet um 20:00 Uhr die Kegelversammlung bei Padberg statt.</div>
 		</div>
 		 -->
+		 
+		 <!-- 
+		<div class="adverts">
+			<img width="275px" src="/images/luell.jpg" />
+		</div>
+		  -->
 		
 		<!-- Start Outer Content -->
 		<div id="outercontent">

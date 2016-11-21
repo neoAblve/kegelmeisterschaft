@@ -23,6 +23,9 @@ public class ClubController {
     @Autowired
     private ResultService resultService;
 
+    @Autowired
+    ControllerHelper helper;
+
     @RequestMapping(method = RequestMethod.GET, value = "/{year}/clubs/herren")
     public ModelAndView showMenClubs(@PathVariable("year") String year,
 	    @RequestParam(value = "column", defaultValue = "") final String column,
@@ -65,7 +68,7 @@ public class ClubController {
 	mv.addObject("typeLower", oldType);
 	mv.addObject("year", year);
 	mv.addObject("otherYears", ConfigModelUtil.getOtherYears(year));
-	mv.addObject("headTop", resultService.getNextHeadModel());
+	helper.addCommonModels(mv);
 	mv.addObject("rootURL", rootURL);
 	mv.addObject("column", column);
 	mv.addObject("order", desc ? "asc" : "desc");
@@ -76,7 +79,7 @@ public class ClubController {
     @RequestMapping(method = RequestMethod.GET, value = "/club/{id}")
     public ModelAndView showClubDetail(@PathVariable("id") int id) {
 	ModelAndView mv = new ModelAndView("clubDetail");
-	mv.addObject("headTop", resultService.getNextHeadModel());
+	helper.addCommonModels(mv);
 	mv.addObject("model", resultService.provideClubDetails(id));
 	return mv;
     }

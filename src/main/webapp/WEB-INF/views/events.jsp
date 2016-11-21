@@ -31,7 +31,7 @@
 				<tr style="${event.newWeek ? 'height: 30px' :''}" class="${rowCounter.count % 2 == 0 ? 'alt' : ''}">
 				<c:choose>
 					<c:when test="${event.newWeek}">
-						<td style="vertical-align: middle; font-weight: bold; font-size: 15px;">Termine für KW ${event.week}</td>
+						<td id="week_${event.week}" style="vertical-align: middle; font-weight: bold; font-size: 15px;">Termine für KW ${event.week}</td>
 						<td></td>
 						<td></td>
 						<td></td>
