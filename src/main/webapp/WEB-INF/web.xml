@@ -55,6 +55,17 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
     
+    <!-- 
+    <filter>
+		<filter-name>redirectFilter</filter-name>
+		<filter-class>kegelmeisterschaft.filter.RedirectFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>redirectFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+     -->
+    
     <!-- You can set the default session timeout (in minutes) for all newly   -->  
 	<session-config>
 		<session-timeout>30</session-timeout>

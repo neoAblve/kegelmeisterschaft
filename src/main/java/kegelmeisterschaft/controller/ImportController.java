@@ -3,9 +3,6 @@ package kegelmeisterschaft.controller;
 import java.io.IOException;
 import java.text.ParseException;
 
-import kegelmeisterschaft.service.importer.ImporterService;
-import kegelmeisterschaft.service.result.ResultService;
-
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import kegelmeisterschaft.service.importer.ImporterService;
+
 @Controller
 @RequestMapping
 public class ImportController {
@@ -21,9 +20,6 @@ public class ImportController {
 
     @Autowired
     private ImporterService importService;
-
-    @Autowired
-    private ResultService resultService;
 
     @Autowired
     ControllerHelper helper;
